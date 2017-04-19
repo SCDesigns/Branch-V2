@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :cities
+  resources :events
   resources :comments
   resources :categories
   devise_for :users

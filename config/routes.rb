@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
+  resources :attendees
   resources :cities
-  resources :events
   resources :comments
   resources :categories
   devise_for :users

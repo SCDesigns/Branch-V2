@@ -1,4 +1,4 @@
 class Attendee < ApplicationRecord
-  belongs_to :user
-  belongs_to :branch
+  has_many :users
+  has_many :branches
 end

@@ -122,6 +122,8 @@ GEM
       rack
     orm_adapter (0.5.0)
     puma (3.8.2)
+    pundit (1.1.0)
+      activesupport (>= 3.0.0)
     rack (2.0.1)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -211,6 +213,7 @@ DEPENDENCIES
   omniauth-facebook
   omniauth-twitter
   puma (~> 3.0)
+  pundit
   rails (~> 5.0.2)
   sass-rails (~> 5.0)
   spring

@@ -17,15 +17,19 @@
  /* Some Style from the Bootstrap Default Theme */
  body {
    padding-top: 10px;
-   padding-bottom: 30px;
+   background-color: F5F8FA;
+ }
+ .container {
+   text-align: center;
+   background-color: FFFFFF;
+ }
+ .feed {
+   margin: 0 auto;
+   width: 57.5%;
  }
 
  .theme-dropdown .dropdown-menu {
    position: static;
    display: block;
    margin-bottom: 20px;
- }
-
- .theme-showcase > p > .btn {
-   margin: 5px 0;
  }

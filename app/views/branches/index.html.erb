@@ -1,0 +1,8 @@
+<% @branches.each do |branch| %>
+  <%= link_to branch.name, branch_path(branch) %>
+  <%= branch.organization %>
+  <%= branch.date%>
+  <%= branch.location %>
+  <%= branch.info %>
+
+<% end %>

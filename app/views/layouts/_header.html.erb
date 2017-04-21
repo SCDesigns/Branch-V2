@@ -1,0 +1,15 @@
+<nav class="nav">
+  <ul class="nav-left">
+    <li> <%= link_to "Branches", branches_path %> </li>
+  </ul>
+  <ul class="nav-right">
+    <% if !current_user %>
+      <li> <%= link_to "Sign In", new_user_session_path %> </li>
+      <li> <%= link_to "Sign Up", new_user_registration_path  %> </li>
+    <% else %>
+      <li> <%= "Signed in as #{current_user.name}" %> </li>
+      <li> <%= link_to "New Branch", new_branch_path %></li>
+      <li> <%= link_to "Sign Out", destroy_user_session_path, method: :delete %> </li>
+    <% end %>
+  </ul>
+</nav>

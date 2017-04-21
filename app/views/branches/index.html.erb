@@ -1,11 +1,12 @@
+<div class="feed">
 <% @branches.each do |branch| %>
-  <div>
-    <h4><b><%= branch.id %> - <%= link_to branch.name, branch_path(branch) %></b></h4></a>
-    <h5><%= branch.organization %><br>
-    <%= branch.date %><br>
-    <%= branch.location %><br>
-    <%= branch.info %></h5>
+  <div class="container">
+    <b><%= branch.id %> - <%= link_to branch.name, branch_path(branch) %></b><br>
+    <ul>
+      <li><%= branch.organization %><br>
+      <li><%= branch.date %><br>
+      <li><%= branch.location %><br>
+      <li><%= branch.info %>
   </div>
-  <br>
 <% end %>
 </div>

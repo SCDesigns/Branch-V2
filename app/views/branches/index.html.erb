@@ -1,7 +1,7 @@
 <div class="feed">
 <% @branches.each do |branch| %>
   <div class="container">
-    <b><%= branch.id %> - <%= link_to branch.name, branch_path(branch) %></b><br>
+    <b><%= link_to branch.name, branch_path(branch) %></b><br>
     <ul>
       <li><%= branch.organization %><br>
       <li><%= branch.date %><br>

@@ -1,5 +1,5 @@
 <div class="feed">
-  <div class="container">
+  <div class="container center-block">
     <b><%= @branch.name %><br>
       <ul>
     <li><%= @branch.organization %><br>
@@ -7,7 +7,7 @@
     <li><%= @branch.location %><br>
     <li><%= @branch.info %>
   </div>
-   <button type="button" class="btn btn-warning"><%= link_to 'Edit', edit_branch_path(@branch)%></button>
-  <button type="button" class="btn btn-danger"><%= link_to 'Delete', branch_path(@branch)%></button>
-  <%= link_to 'Back', branches_path %>
+    <button type="button" class="btn btn-warning"><%= link_to 'Edit', edit_branch_path(@branch)%></button>
+    <button type="button" class="btn btn-danger"><%= link_to 'Delete', branch_path(@branch)%></button>
+    <button type="button" class="btn btn-default"><%= link_to 'Back', branches_path %></button>
 </div>

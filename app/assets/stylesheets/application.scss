@@ -16,29 +16,15 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
  /* Some Style from the Bootstrap Default Theme */
- body {
-   padding-top: 10px;
-   background-color: #A5D6A7;
- }
- .container {
-    text-align: left;
-    background-color: #FFFFFF;
-    font-family: "Helvetica Neue", Roboto, "Segoe UI", Calibri, sans-serif;
-    font-size: 15px;
-    font-weight: bold;
-    line-height: 25px;
-    border-color: #eee #ddd #bbb;
-    border-style: solid;
-    border-width: 1px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
-    margin: 0 auto;
-    padding: 15px 10px;
-    max-width: 60vw;
- }
- .feed {
-   margin: 0 auto;
-   width: 40%;
- }
- h3 {
-   margin: 0 auto;
- }
+body {
+   background-color: #E0E0E0;
+   padding-top: 70px;
+}
+.container a {
+  color: #00C853;
+  text-decoration: underline;
+}
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+    background-color: #00C853;
+    color: #FFFFFF;
+}

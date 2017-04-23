@@ -16,9 +16,26 @@
    border-width: 1px;
    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
 }
+.container a {
+  color: #00C853;
+  text-decoration: underline;
+}
 .feed {
   margin: 0 auto;
 }
 h3 {
   margin: 0 auto;
+}
+.buttons {
+  margin: 10px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.btn {
+  margin: 10px;
+}
+.btn a {
+  text-decoration: none;
+  color: #000000;
 }

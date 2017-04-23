@@ -1,0 +1,15 @@
+<% if user_signed_in? %>
+<% else %>
+<div class="welcome">
+  <h1>Welcome to Branch!</h1>
+  <p class="lead">
+    Please Sign-Up or Sign-In below
+  </p>
+  <div class="row-fluid">
+    <div>
+      <%= link_to "Sign Up", new_user_registration_path, :class => "btn btn-success" %>
+      <%= link_to "Sign In", new_user_session_path, :class => "btn btn-success" %>
+    </div>
+  </div>
+<% end %>
+</div>

@@ -5,9 +5,9 @@
     <li> <%= link_to "Sign In", new_user_session_path %> </li>
     <li> <%= link_to "Sign Up", new_user_registration_path  %> </li>
   </ul>
-  <ul class="nav navbar-nav navbar-right">
   <% else %>
-    <li> <%= "Signed in as #{current_user.name}" %> </li>
+  <ul class="nav navbar-nav navbar-right">
+    <li id="hello"> <%= "Signed in as: "%><strong><%="#{current_user.name}"%></strong></li>
     <li> <%= link_to "New Branch", new_branch_path %></li>
     <li> <%= link_to "Sign Out", destroy_user_session_path, method: :delete %> </li>
   </ul>

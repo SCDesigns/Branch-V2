@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root 'branches#index', as: 'home'
+  root 'welcome#home', as: 'home'
   resources :attendees
   resources :cities
   resources :comments

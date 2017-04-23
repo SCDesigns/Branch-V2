@@ -20,11 +20,16 @@ body {
    background-color: #E0E0E0;
    padding-top: 70px;
 }
-.container a {
-  color: #00C853;
-  text-decoration: underline;
-}
 .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
     background-color: #00C853;
     color: #FFFFFF;
+}
+.welcome {
+  text-align: center;
+  margin: 0 auto;
+  max-width: 40vw;
+}
+#hello {
+  padding: inherit;
+  margin-top: 15px;
 }

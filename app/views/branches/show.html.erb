@@ -1,13 +1,13 @@
-  <div class="container">
-    <b><%= @branch.name %><br>
-      <ul>
-    <li><%= @branch.organization %><br>
-    <li><%= @branch.date %><br>
-    <li><%= @branch.location %><br>
-    <li><%= @branch.info %>
-  </div>
-  <div class="buttons">
-    <%= link_to 'Edit', edit_branch_path(@branch), :class => "btn btn-warning"%>
-    <%= link_to 'Delete', branch_path(@branch), :class => "btn btn-danger"%>
-    <%= link_to 'Back', branches_path, :class => "btn btn-default" %>
-  </div>
+<div class="container">
+  <b><%= @branch.name %><br>
+    <ul>
+  <li><%= @branch.organization %><br>
+  <li><%= @branch.date %><br>
+  <li><%= @branch.location %><br>
+  <li><%= @branch.info %>
+</div>
+<div class="buttons">
+  <%= link_to 'Edit', edit_branch_path(@branch), :class => "btn btn-warning"%>
+  <%= link_to 'Delete', branch_path(@branch), :class => "btn btn-danger"%>
+  <%= link_to 'Back', branches_path, :class => "btn btn-default" %>
+</div>

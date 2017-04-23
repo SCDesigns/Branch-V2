@@ -1,5 +1,13 @@
-<h3><%= @branch.name %></h3>
-<h4><%= @branch.organization %><br>
-<%= @branch.date %><br>
-<%= @branch.location %><br>
-<%= @branch.info %><h4>
+<div class="feed">
+  <div class="container">
+    <b><%= @branch.name %><br>
+      <ul>
+    <li><%= @branch.organization %><br>
+    <li><%= @branch.date %><br>
+    <li><%= @branch.location %><br>
+    <li><%= @branch.info %>
+  </div>
+   <button type="button" class="btn btn-warning"><%= link_to 'Edit', edit_branch_path(@branch)%></button>
+  <button type="button" class="btn btn-danger"><%= link_to 'Delete', branch_path(@branch)%></button>
+  <%= link_to 'Back', branches_path %>
+</div>

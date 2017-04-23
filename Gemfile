@@ -5,6 +5,9 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+#bootstrap
+gem 'bootstrap-sass', '~> 3.3.6'
+#authentication / authorization
 gem 'pundit'
 gem 'devise'
 gem 'omniauth'

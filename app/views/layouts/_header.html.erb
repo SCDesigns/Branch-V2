@@ -9,7 +9,7 @@
   <ul class="nav navbar-nav navbar-right">
     <li id="hello"> <%= "Signed in as: "%><strong><%="#{current_user.name}"%></strong></li>
     <li> <%= link_to "New Branch", new_branch_path %></li>
-    <li> <%= link_to "Sign Out", destroy_user_session_path, method: :delete %> </li>
+    <li> <%= link_to "Sign Out", destroy_user_session_path, :method => :delete %></li>
   </ul>
   <% end %>
   </ul>

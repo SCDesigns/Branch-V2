@@ -4,10 +4,12 @@ Branch: Ruby on Rails Content Management System for local events &amp; meet-ups
 ## Installation / Usage
 
 	1. Clone the repository
-	2. Run 'rake db:migrate'
-	3. Run 'rake db:seed' **Skip if you prefer to generate your own data**
-	4. Run 'rails s'
-	5. Open the given address in your browser and continue as you wish
+	2. Navigate to the repository 
+	3. Run 'bundle install'
+	4. Run 'rake db:migrate'
+	5. Run 'rake db:seed' *skip if you'd prefer a blank slate*
+	6. Run 'rails s'
+	7. Open the given address in your browser and continue as you wish
 
 <p data-visibility='hidden'>View <a href='https://github.com/SCDesigns/branch-v2-rails' title='Branch'>Branch</a> on Github</p>
 

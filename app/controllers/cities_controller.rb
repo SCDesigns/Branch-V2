@@ -6,4 +6,16 @@ class CitiesController < ApplicationController
   def show
     @city = City.find(params[:id])
   end
+
+  def new
+
+  end
+
+  def create
+    authorize @city
+    city = City.new(:name)
+    city.titleize
+    city.save!
+    redirect_to 'cities_path'
+  end
 end

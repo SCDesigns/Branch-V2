@@ -2,11 +2,12 @@
 <% @branches.each do |branch| %>
   <div class="container">
     <b><%= link_to branch.name, branch_path(branch) %></b><br>
-    <ul>
-      <li><%= branch.organization %><br>
-      <li><%= branch.date %><br>
-      <li><%= branch.location %><br>
-      <li><%= branch.info %>
+      <ul>
+        <li><%= branch.organization %><br>
+        <li><%= branch.date %><br>
+        <li><%= branch.location %><br>
+        <li><%= branch.info %>
+      </ul>
   </div>
 <% end %>
 </div>

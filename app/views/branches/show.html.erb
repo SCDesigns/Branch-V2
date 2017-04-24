@@ -1,10 +1,11 @@
 <div class="container">
   <b><%= @branch.name %><br>
     <ul>
-  <li><%= @branch.organization %><br>
-  <li><%= @branch.date %><br>
-  <li><%= @branch.location %><br>
-  <li><%= @branch.info %>
+      <li><%= @branch.organization %><br>
+      <li><%= @branch.date %><br>
+      <li><%= @branch.location %><br>
+      <li><%= @branch.info %>
+    </ul>
 </div>
 <div class="buttons">
   <% if policy(@branch).update? %>

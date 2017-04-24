@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
-  root 'welcome#home'
   devise_for :users
+  root 'welcome#home'
   resources :attendees
-  resources :cities
-  resources :comments
-  resources :categories
   resources :branches
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  resources :comments
+  resources :cities do
+    resources :categories, only: [:index, :show, :new, :edit]
+  end
 end

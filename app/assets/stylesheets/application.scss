@@ -21,8 +21,9 @@ body {
    padding-top: 70px;
 }
 .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
-    background-color: #00C853;
-    color: #FFFFFF;
+  background-color: #00e676;
+  color: #FFFFFF;
+  font-weight: bold;
 }
 .welcome {
   text-align: center;
@@ -30,6 +31,6 @@ body {
   max-width: 40vw;
 }
 #hello {
-  padding: inherit;
+  padding: 0 10px;
   margin-top: 15px;
 }

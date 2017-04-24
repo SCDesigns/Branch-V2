@@ -1,17 +1,19 @@
+<div class="container" id="form">
 <%= form_for branch do |f| %>
-  <%= f.label :category %>
-  <%= f.collection_select :category, Category.all, :id, :name %>
-  <%= f.label :city %>
-  <%= f.collection_select :city, City.all, :id, :name %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-  <%= f.label :organization %>
-  <%= f.text_field :organization %>
-  <%= f.label :date %>
-  <%= f.text_field :date %>
-  <%= f.label :location %>
-  <%= f.text_field :location %>
-  <%= f.label :info %>
-  <%= f.text_field :info %>
+  <%= f.label :city %>:
+  <%= f.collection_select :city, City.all, :id, :name %><br>
+  <%= f.label :category %>:
+  <%= f.collection_select :category, Category.all, :id, :name %><br>
+  <%= f.label :name %>:
+  <%= f.text_field :name %><br>
+  <%= f.label :organization %>:
+  <%= f.text_field :organization %><br>
+  <%= f.label :date %>:
+  <%= f.text_field :date %><br>
+  <%= f.label :location %>:
+  <%= f.text_field :location %><br>
+  <%= f.label :info %>:
+  <%= f.text_area :info %><br>
   <%= f.submit 'Submit Branch' %>
 <% end %>
+</div>

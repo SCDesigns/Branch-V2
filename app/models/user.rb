@@ -7,5 +7,10 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  enum role: [:user, :moderator, :admin]
+  enum role: [:user, :admin]
+
+private
+  def set_default_role
+    self.role ||= :user
+  end
 end

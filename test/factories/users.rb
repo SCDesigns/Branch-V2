@@ -1,7 +1,12 @@
 FactoryGirl.define do
   factory :user do
-    name "test"
-    email "test@mail.com"
-    password "password"
-  end # this creates user_id: 1
+    confirmed_at Time.now
+    name "admin"
+    email "admin@branch.com"
+    password "itsasecret"
+
+    trait :admin do
+      role 'admin'
+    end
+  end
 end

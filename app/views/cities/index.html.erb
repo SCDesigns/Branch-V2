@@ -1,1 +1,8 @@
-<% render @cities %>
+<div class="container">
+  <% @cities.each do |city| %>
+    <b><%= link_to city.name, city_path(city) %></b><br>
+  <% end %>
+  <div class="buttons">
+      <%= link_to 'New City', new_city_path, :class => "btn btn-default" %>
+  </div>
+</div>

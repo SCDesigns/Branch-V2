@@ -14,10 +14,10 @@ class CategoriesController < ApplicationController
 
     def show
       if params[:city_id]
-        @artist = City.find_by(id: params[:city_id])
+        @category = City.find_by(id: params[:city_id])
         @category = @city.categories.find_by(id: params[:id])
         if @category.nil?
-          redirect_to artist_categories_path(@artist), alert: "Category not found"
+          redirect_to city_categories_path(@city), alert: "Category not found"
         end
       else
         @category = Category.find(params[:id])
@@ -26,7 +26,7 @@ class CategoriesController < ApplicationController
 
     def new
       if params[:city_id] && !City.exists?(params[:city_id])
-        redirect_to artists_path, alert: "Artist not found"
+        redirect_to cities_path, alert: "City not found"
       else
         @category = Category.new(city_id: params[:city_id])
       end
@@ -43,12 +43,12 @@ class CategoriesController < ApplicationController
 
     def edit
       if params[:city_id]
-        artist = City.find_by(id: params[:city_id])
+        city = City.find_by(id: params[:city_id])
         if city.nil?
-          redirect_to artists_path, alert: "Artist not found"
+          redirect_to cities_path, alert: "City not found"
         else
           @category = city.categories.find_by(id: params[:id])
-          redirect_to artist_categories_path(artist), alert: "Category not found" if @category.nil?
+          redirect_to city_categories_path(city), alert: "Category not found" if @category.nil?
         end
       else
         @category = Category.find(params[:id])

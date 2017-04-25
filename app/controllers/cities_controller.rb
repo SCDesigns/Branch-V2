@@ -12,8 +12,8 @@ class CitiesController < ApplicationController
   end
 
   def create
+    @city = City.new(city_params)
     authorize @city
-    city = City.new(city_params)
     city.titleize
     city.save!
     redirect_to 'cities_path'

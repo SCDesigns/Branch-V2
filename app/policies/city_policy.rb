@@ -1,10 +1,16 @@
 class CityPolicy < ApplicationPolicy
-  attr_reader :user,
+    attr_reader :user, :city
 
-  def create?
-    user.admin?
-  end
+    def initialize(user, city)
+    @user = user
+    @city = city
+    end
 
-  def update?
-    user.admin? || user.moderator?
+    def create?
+      user.admin?
+    end
+
+    def update?
+      user.admin?
+    end
   end

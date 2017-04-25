@@ -1,10 +1,15 @@
 class BranchesController < ApplicationController
-  def index
-    @branches = Branch.all
+
+  def new
+
   end
 
   def create
     @branches = Branch.new(branch_params)
+  end
+
+  def index
+    @branches = Branch.all
   end
 
   def show
@@ -14,6 +19,10 @@ class BranchesController < ApplicationController
   def update
     @branch = Branch.find(params[:id])
     authorize @branch
+    if @branch.update(branch_params)
+    redirect_to @branch
+  else
+    render :edit
   end
 
   private

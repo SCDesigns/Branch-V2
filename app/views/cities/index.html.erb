@@ -1,6 +1,11 @@
+<p class="lead">
+  <strong>Welcome to Branch!<br> Please select your city.</strong>
+</p>
 <div class="container">
   <% @cities.each do |city| %>
-    <b><%= link_to city.name, city_path(city) %></b><br>
+  <ul id="cont">
+    <h4><li id="cont_item"><%= link_to city.name, city_path(city) %></li></h4><br>
+  </ul>
   <% end %>
   <div class="buttons">
       <%= link_to 'New City', new_city_path, :class => "btn btn-default" %>

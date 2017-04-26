@@ -2,25 +2,20 @@
 
 def make_seeds
   make_cities
-  make_categories
   make_users
   make_branches
   make_comments
 end
 
 def make_cities
-  ['New York','Chicago','Los Angeles'].each do |name|
-    City.create(name: name)
-  end
-end
-
-def make_categories
-  ['Music','Sports','Theatre','Tourism'].each do |name|
-    Category.create(name: name)
+  cities = ['New York','Chicago','Los Angeles'].each do |name|
+    City.create(name: name, categories: ['Music','Sports','Theatre','Tourism'])
   end
 end
 
 def make_users
+  #Admin
+    User.create(name: "admin", password: "asecret", email: "admin@branch.com", role: 1)
   #Venues
     User.create(name: "MSG", password: "4penn", email: "events@msg.com")
     User.create(name: "Apollo", password: "showtime", email: "events@theapollo.com")
@@ -42,7 +37,7 @@ def make_branches
     date: "Saturday, April 22nd, 12:00 AM",
     location: "Madison Sqaure Garden - 4 Pennsylvania Plaza, New York, NY 10001",
     info: "For Tickets & Game Times Visit - http://madisonsquaregarden.ticketoffices.com/New+York+Rangers",
-    user: User.find_by(id: 1),
+    user: User.find_by(id: 2),
     city_id: City.find_by(id: 1).id,
     category_id: Category.find_by(id: 2).id)
   Branch.create(
@@ -51,7 +46,7 @@ def make_branches
     date: "Sunday, April 23nd, 12:00 AM",
     location: "Madison Sqaure Garden - 4 Pennsylvania Plaza, New York, NY 10001",
     info: "For Tickets & Game Times Visit - http://madisonsquaregarden.ticketoffices.com/New+York+Rangers",
-    user: User.find_by(id: 1),
+    user: User.find_by(id: 2),
     city_id: City.find_by(id: 1).id,
     category_id: Category.find_by(id: 2).id)
   Branch.create(
@@ -60,7 +55,7 @@ def make_branches
     date: "All Non-Event Days - See Info",
     location: "Madison Sqaure Garden - 4 Pennsylvania Plaza, New York, NY 10001",
     info: "Call 212.465.6741 or Visit http://www.thegarden.com/calendar",
-    user: User.find_by(id: 1),
+    user: User.find_by(id: 2),
     city_id: City.find_by(id: 1).id,
     category_id: Category.find_by(id: 4).id)
 

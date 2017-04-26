@@ -1,10 +1,17 @@
-<div class="container">
-  <b><%= @city.name %><br>
+<div class="container" id="title">
+  <h3><b><%= @city.name %></b><br></h3>
 </div>
-<div class="buttons">
-  <% if policy(@city).update? %>
-    <%= link_to 'Edit', edit_city_path(@city), :class => "btn btn-warning"%>
-    <%= link_to 'Delete', city_path(@city), :class => "btn btn-danger"%>
-  <% end %>
-  <%= link_to 'Back', cities_path, :class => "btn btn-default" %>
+<div class="container">
+  Categories:
+  <% @city.categories.each do |category| %>
+    <ul id="ctg">
+      <li id="cat"><%= link_to category.name, city_category_path(category) %></li>
+    </ul>
+  <%end%>
+</div>
+  <div class="buttons">
+      <%= link_to 'Edit', edit_city_path(@city), :class => "btn btn-warning"%>
+      <%= link_to 'Delete', city_path(@city), :class => "btn btn-danger"%>
+    <%= link_to 'Back', cities_path, :class => "btn btn-default" %>
+  </div>
 </div>

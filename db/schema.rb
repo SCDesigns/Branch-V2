@@ -22,7 +22,6 @@ ActiveRecord::Schema.define(version: 20170419163433) do
   end
 
   create_table "branches", force: :cascade do |t|
-    t.integer  "city_id"
     t.integer  "category_id"
     t.integer  "user_id"
     t.string   "name"
@@ -33,7 +32,6 @@ ActiveRecord::Schema.define(version: 20170419163433) do
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
     t.index ["category_id"], name: "index_branches_on_category_id"
-    t.index ["city_id"], name: "index_branches_on_city_id"
     t.index ["user_id"], name: "index_branches_on_user_id"
   end
 
@@ -63,20 +61,20 @@ ActiveRecord::Schema.define(version: 20170419163433) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string   "email",                  default: "",    null: false
-    t.string   "encrypted_password",     default: "",    null: false
+    t.string   "email",                  default: "", null: false
+    t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,     null: false
+    t.integer  "sign_in_count",          default: 0,  null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
-    t.datetime "created_at",                             null: false
-    t.datetime "updated_at",                             null: false
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
     t.string   "name"
-    t.boolean  "admin",                  default: false, null: false
+    t.integer  "role",                   default: 0
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

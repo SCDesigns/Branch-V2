@@ -1,4 +1,5 @@
 class CategoriesController < ApplicationController
+  before_action :authenticate_user!
   def index
       if params[:city_id]
         @city = City.find_by(id: params[:city_id])
@@ -14,7 +15,7 @@ class CategoriesController < ApplicationController
 
     def show
       if params[:city_id]
-        @category = City.find_by(id: params[:city_id])
+        @city = City.find_by(id: params[:city_id])
         @category = @city.categories.find_by(id: params[:id])
         if @category.nil?
           redirect_to city_categories_path(@city), alert: "Category not found"

@@ -16,6 +16,16 @@
    border-width: 1px;
    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.15);
 }
+.sub_container {
+   text-align: left;
+   margin: 0 auto;
+   padding: 15px 10px;
+   max-width: 35vw;
+   font-family: "Helvetica Neue", Roboto, "Segoe UI", Calibri, sans-serif;
+   font-size: 15px;
+   font-weight: bold;
+   line-height: 25px;
+}
 #form {
   text-align: center;
 }

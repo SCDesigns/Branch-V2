@@ -7,6 +7,6 @@ class BranchPolicy < ApplicationPolicy
   end
 
   def update?
-    user.admin? || branch.try(:user) == user
+    @user.try(:admin?) || branch.try(:user) == user
   end
 end

@@ -7,10 +7,10 @@ class CityPolicy < ApplicationPolicy
     end
 
     def create?
-      user.admin?
+      @user.try(:admin?)
     end
 
     def update?
-      user.admin?
+      @user.try(:admin?)
     end
   end

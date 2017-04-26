@@ -2,16 +2,30 @@
 
 def make_seeds
   make_cities
+  make_categories
   make_users
   make_branches
   make_comments
 end
 
 def make_cities
-  cities = ['New York','Chicago','Los Angeles'].each do |name|
-    City.create(name: name, categories: ['Music','Sports','Theatre','Tourism'])
+  ['New York','Chicago','Los Angeles'].each do |name|
+    City.create(name: name)
   end
 end
+
+def make_categories
+  ['Music','Sports','Theatre','Tourism'].each do |name|
+    Category.create(name: name, city_id: 1)
+  end
+  ['Music','Sports','Theatre','Tourism'].each do |name|
+    Category.create(name: name, city_id: 2)
+  end
+  ['Music','Sports','Theatre','Tourism'].each do |name|
+    Category.create(name: name, city_id: 3)
+  end
+end
+
 
 def make_users
   #Admin
@@ -38,7 +52,6 @@ def make_branches
     location: "Madison Sqaure Garden - 4 Pennsylvania Plaza, New York, NY 10001",
     info: "For Tickets & Game Times Visit - http://madisonsquaregarden.ticketoffices.com/New+York+Rangers",
     user: User.find_by(id: 2),
-    city_id: City.find_by(id: 1).id,
     category_id: Category.find_by(id: 2).id)
   Branch.create(
     name: "New York Rangers vs. Montreal Canadiens - Game 7 (If Necessary)",
@@ -47,7 +60,6 @@ def make_branches
     location: "Madison Sqaure Garden - 4 Pennsylvania Plaza, New York, NY 10001",
     info: "For Tickets & Game Times Visit - http://madisonsquaregarden.ticketoffices.com/New+York+Rangers",
     user: User.find_by(id: 2),
-    city_id: City.find_by(id: 1).id,
     category_id: Category.find_by(id: 2).id)
   Branch.create(
     name: "The All Access Tour",
@@ -56,7 +68,6 @@ def make_branches
     location: "Madison Sqaure Garden - 4 Pennsylvania Plaza, New York, NY 10001",
     info: "Call 212.465.6741 or Visit http://www.thegarden.com/calendar",
     user: User.find_by(id: 2),
-    city_id: City.find_by(id: 1).id,
     category_id: Category.find_by(id: 4).id)
 
   ##########
@@ -69,7 +80,6 @@ def make_branches
     location: "Apollo Theatre - 253 W 125th St, New York, NY 10027",
     info: "For Tickets & More Info - https://www.apollotheater.org/calendar/",
     user: User.find_by(id: 2),
-    city_id: City.find_by(id: 1).id,
     category_id: Category.find_by(id: 3).id)
   Branch.create(
     name: "Salon Series: Maurice Chestnut & Friends",
@@ -78,7 +88,6 @@ def make_branches
     location: "Apollo Theatre - 253 W 125th St, New York, NY 10027",
     info: "For Tickets & More Info - https://www.apollotheater.org/calendar/",
     user: User.find_by(id: 2),
-    city_id: City.find_by(id: 1).id,
     category_id: Category.find_by(id: 3).id)
 
   ##########
@@ -91,7 +100,6 @@ def make_branches
     location: "United Center - 1901 W Madison St, Chicago, IL 60612",
     info: "For Tickets & More Info - http://www.unitedcenter.com/",
     user: User.find_by(id: 3),
-    city_id: City.find_by(id: 2).id,
     category_id: Category.find_by(id: 2).id)
   Branch.create(
     name: "Chicago Bulls vs. Boston Celtics - Game 3",
@@ -100,7 +108,6 @@ def make_branches
     location: "Apollo Theatre - 253 W 125th St, New York, NY 10027",
     info: "For Tickets & More Info - http://www.unitedcenter.com/",
     user: User.find_by(id: 3),
-    city_id: City.find_by(id: 2).id,
     category_id: Category.find_by(id: 2).id)
 
   ##########
@@ -113,7 +120,6 @@ def make_branches
     location: "329 N Dearborn St, Chicago, IL 60654",
     info: "For Tickets & Schedule - http://www.ticketmaster.com/House-of-Blues-Chicago-tickets-Chicago/venue/32905",
     user: User.find_by(id: 4),
-    city_id: City.find_by(id: 2).id,
     category_id: Category.find_by(id: 1).id)
 
   ##########
@@ -126,7 +132,6 @@ def make_branches
     location: "2301 Highland Avenue, Los Angeles, CA",
     info: "For Tickets & Schedule - http://www.livenation.com/venues/14273/hollywood-bowl",
     user: User.find_by(id: 5),
-    city_id: City.find_by(id: 3).id,
     category_id: Category.find_by(id: 1).id)
 
 end

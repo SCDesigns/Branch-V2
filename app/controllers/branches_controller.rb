@@ -2,7 +2,11 @@ class BranchesController < ApplicationController
   before_action :authenticate_user!
 
   def new
-
+    if params[:city_id] && !City.exists?(params[:city_id])
+      redirect_to cities_path, alert: "City not found"
+    else
+      @branch = Branch.new(city_id: params[:city_id])
+    end
   end
 
   def create

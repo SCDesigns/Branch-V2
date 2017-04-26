@@ -8,9 +8,4 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   enum role: [:user, :admin]
-
-private
-  def set_default_role
-    self.role ||= :user
-  end
 end

@@ -1,4 +1,5 @@
 class BranchesController < ApplicationController
+  before_action :authenticate_user!
 
   def new
 
@@ -20,9 +21,10 @@ class BranchesController < ApplicationController
     @branch = Branch.find(params[:id])
     authorize @branch
     if @branch.update(branch_params)
-    redirect_to @branch
-  else
-    render :edit
+      redirect_to @branch
+    else
+      render :edit
+    end
   end
 
   private

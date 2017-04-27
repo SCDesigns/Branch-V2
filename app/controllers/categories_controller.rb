@@ -6,7 +6,7 @@ class CategoriesController < ApplicationController
         if @city.nil?
           redirect_to cities_path, alert: "City not found"
         else
-          @categories = @city.categories
+          @categories = City.categories
         end
       else
         @categories = Category.all
@@ -16,7 +16,7 @@ class CategoriesController < ApplicationController
     def show
       if params[:city_id]
         @city = City.find_by(id: params[:city_id])
-        @category = @city.categories.find_by(id: params[:id])
+        @category = Category.find_by(id: params[:id])
         if @category.nil?
           redirect_to city_categories_path(@city), alert: "Category not found"
         end

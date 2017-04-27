@@ -14,7 +14,11 @@ class BranchesController < ApplicationController
   end
 
   def index
-    @branches = Branch.all
+    if params[:city_id]
+      @branches = City.find(params[:city_id]).branches
+    else
+      @branches = Branch.all
+    end
   end
 
   def show

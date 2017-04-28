@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 20170419163433) do
 
   create_table "branches", force: :cascade do |t|
     t.integer  "category_id"
+    t.integer  "city_id"
     t.integer  "user_id"
     t.string   "name"
     t.string   "organization"
@@ -32,6 +33,7 @@ ActiveRecord::Schema.define(version: 20170419163433) do
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
     t.index ["category_id"], name: "index_branches_on_category_id"
+    t.index ["city_id"], name: "index_branches_on_city_id"
     t.index ["user_id"], name: "index_branches_on_user_id"
   end
 

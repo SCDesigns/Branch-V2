@@ -139,12 +139,12 @@ end
 def make_comments
 # :branch.find_by(id:, :user: User.find_by(id:, :title, :content
   Comment.create(
-    branch_id: Branch.find_by(id: 4).id,
+    branch: Branch.find_by(id: 4),
     user: User.find_by(id: 7),
     title: "Can't Wait!!",
     content: "Been meaning to see Lionel live, but what's Mariah Carey gonna sing? Like Christmas songs...???")
   Comment.create(
-    branch_id: Branch.find_by(id: 4).id,
+    branch: Branch.find_by(id: 4),
     user: User.find_by(id: 7),
     title: "Will 22 Savage also be there?",
     content: "I heard he's not as good but I think they should collab.")

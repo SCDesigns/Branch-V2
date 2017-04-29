@@ -52,7 +52,8 @@ def make_branches
     location: "Madison Sqaure Garden - 4 Pennsylvania Plaza, New York, NY 10001",
     info: "For Tickets & Game Times Visit - http://madisonsquaregarden.ticketoffices.com/New+York+Rangers",
     user: User.find_by(id: 2),
-    category_id: Category.find_by(id: 2).id)
+    category: Category.find_by(id: 2),
+    city: City.find_by(id: 1))
   Branch.create(
     name: "New York Rangers vs. Montreal Canadiens - Game 7 (If Necessary)",
     organization: "NHL",
@@ -60,7 +61,8 @@ def make_branches
     location: "Madison Sqaure Garden - 4 Pennsylvania Plaza, New York, NY 10001",
     info: "For Tickets & Game Times Visit - http://madisonsquaregarden.ticketoffices.com/New+York+Rangers",
     user: User.find_by(id: 2),
-    category_id: Category.find_by(id: 2).id)
+    category: Category.find_by(id: 2),
+    city: City.find_by(id: 1))
   Branch.create(
     name: "The All Access Tour",
     organization: "MSG",
@@ -68,7 +70,8 @@ def make_branches
     location: "Madison Sqaure Garden - 4 Pennsylvania Plaza, New York, NY 10001",
     info: "Call 212.465.6741 or Visit http://www.thegarden.com/calendar",
     user: User.find_by(id: 2),
-    category_id: Category.find_by(id: 4).id)
+    category: Category.find_by(id: 4),
+    city: City.find_by(id: 1))
 
   ##########
   # Seed 2 #
@@ -80,7 +83,8 @@ def make_branches
     location: "Apollo Theatre - 253 W 125th St, New York, NY 10027",
     info: "For Tickets & More Info - https://www.apollotheater.org/calendar/",
     user: User.find_by(id: 2),
-    category_id: Category.find_by(id: 3).id)
+    category: Category.find_by(id: 3),
+    city: City.find_by(id: 1))
   Branch.create(
     name: "Salon Series: Maurice Chestnut & Friends",
     organization: "Apollo Theatre Foundation",
@@ -88,7 +92,8 @@ def make_branches
     location: "Apollo Theatre - 253 W 125th St, New York, NY 10027",
     info: "For Tickets & More Info - https://www.apollotheater.org/calendar/",
     user: User.find_by(id: 2),
-    category_id: Category.find_by(id: 3).id)
+    category: Category.find_by(id: 3),
+    city: City.find_by(id: 1))
 
   ##########
   # Seed 3 #
@@ -100,7 +105,8 @@ def make_branches
     location: "United Center - 1901 W Madison St, Chicago, IL 60612",
     info: "For Tickets & More Info - http://www.unitedcenter.com/",
     user: User.find_by(id: 3),
-    category_id: Category.find_by(id: 2).id)
+    category: Category.find_by(id: 6),
+    city: City.find_by(id: 2))
   Branch.create(
     name: "Chicago Bulls vs. Boston Celtics - Game 3",
     organization: "United Center",
@@ -108,7 +114,8 @@ def make_branches
     location: "Apollo Theatre - 253 W 125th St, New York, NY 10027",
     info: "For Tickets & More Info - http://www.unitedcenter.com/",
     user: User.find_by(id: 3),
-    category_id: Category.find_by(id: 2).id)
+    category: Category.find_by(id: 6),
+    city: City.find_by(id: 2))
 
   ##########
   # Seed 4 #
@@ -120,7 +127,8 @@ def make_branches
     location: "329 N Dearborn St, Chicago, IL 60654",
     info: "For Tickets & Schedule - http://www.ticketmaster.com/House-of-Blues-Chicago-tickets-Chicago/venue/32905",
     user: User.find_by(id: 4),
-    category_id: Category.find_by(id: 1).id)
+    category: Category.find_by(id: 5),
+    city: City.find_by(id: 2))
 
   ##########
   # Seed 5 #
@@ -132,7 +140,8 @@ def make_branches
     location: "2301 Highland Avenue, Los Angeles, CA",
     info: "For Tickets & Schedule - http://www.livenation.com/venues/14273/hollywood-bowl",
     user: User.find_by(id: 5),
-    category_id: Category.find_by(id: 1).id)
+    category: Category.find_by(id: 9),
+    city: City.find_by(id: 3))
 
 end
 

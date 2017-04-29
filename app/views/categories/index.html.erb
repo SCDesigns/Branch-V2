@@ -1,8 +1,8 @@
 <div class="feed">
-<% @categories.each do |category| %>
+<% @city.categories.each do |category| %>
   <div class="container">
     <ul>
-      <b><li><%= link_to category.name, category_path(category) %></li></b><br>
+      <b><li><%= link_to category.name, city_category_path(@city, category) %></li></b><br>
     </ul>
   </div>
 <% end %>

@@ -2,9 +2,9 @@
   <h3><b><%= @category.name %><br></h3>
 </div>
 <div class="container">
-    <% @category.branches.find_by(params[:city_id]) do |branch| %>
+    <% @category.branches.each do |branch| %>
       <div class="sub_container">
-        <b><%= link_to branch.name, city_branch_url(branch) %></b><br>
+        <b><%= link_to branch.name, city_branch_path(branch) %></b><br>
           <ul>
             <li><%= branch.organization %></li><br>
             <li><%= branch.date %></li><br>
@@ -17,8 +17,8 @@
 
 <div class="buttons">
   <% if policy(@category).update? %>
-    <%= link_to 'Edit', edit_city_category_path(@category), :class => "btn btn-warning"%>
-    <%= link_to 'Delete', city_category_path(@category), :class => "btn btn-danger"%>
+    <%= link_to 'Edit', edit_city_category_path(@city, @category), :class => "btn btn-warning"%>
+    <%= link_to 'Delete', city_category_path(@city, @category), :class => "btn btn-danger"%>
   <% end %>
   <%= link_to 'Back', cities_path, :class => "btn btn-default" %>
 </div>

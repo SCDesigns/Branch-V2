@@ -4,7 +4,6 @@ Rails.application.routes.draw do
   # resources :attendees
   resources :cities do
     resources :categories, only: [:index, :show, :new, :edit]
-    resources :branches, only: [:index, :show]
-    resources :branches, only: [:new, :edit]
+    resources :branches
   end
 end

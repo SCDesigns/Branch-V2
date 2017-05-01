@@ -17,19 +17,23 @@
  @import "bootstrap";
  /* Some Style from the Bootstrap Default Theme */
 body {
+  background-image: url('/assets/background.png');
    background-color: #E0E0E0;
    padding-top: 70px;
    text-align: center;
 }
 .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
-  background-color: #00e676;
-  color: #FFFFFF;
+  color: #2A677D;
   font-weight: bold;
+  text-decoration: underline #D8E435;
 }
 .welcome {
   text-align: center;
   margin: 0 auto;
   max-width: 40vw;
+}
+.lead {
+  color: #FFFFFF;
 }
 #hello {
   padding: 0 10px;

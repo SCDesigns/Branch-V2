@@ -1,6 +1,25 @@
 // Place all the styles related to the Branches controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.btn {
+  margin: 10px;
+}
+.btn a {
+  text-decoration: none;
+  color: #000000;
+}
+.btn-default > a:hover {
+  background-color: #00e676;
+  color: #FFFFFF;
+  border: none;
+  font-weight: bold;
+}
+.buttons {
+  margin: 10px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .container {
    text-align: left;
    margin: 0 auto;
@@ -16,6 +35,10 @@
    border-width: 1px;
    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.15);
 }
+.container a {
+  color: #2A677D;
+  text-decoration: underline #D8E435;
+}
 .sub_container {
    text-align: left;
    margin: 0 auto;
@@ -26,34 +49,12 @@
    font-weight: bold;
    line-height: 25px;
 }
-#form {
-  text-align: center;
-}
-.container a {
-  color: #00b248;
-  text-decoration: underline;
-}
 .feed {
   margin: 0 auto;
 }
+#form {
+  text-align: center;
+}
 h3 {
   margin: 0 auto;
-}
-.buttons {
-  margin: 10px auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.btn {
-  margin: 10px;
-}
-.btn a {
-  text-decoration: none;
-  color: #000000;
-}
-.btn-default > a:hover {
-  background-color: #00e676;
-  color: #FFFFFF;
-  font-weight: bold;
 }

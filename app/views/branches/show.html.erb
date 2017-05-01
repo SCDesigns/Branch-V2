@@ -1,5 +1,5 @@
 <div class="container">
-  <b><%= @branch.name %><br>
+  <center><%= @branch.name %></center><br>
     <ul>
       <li><%= @branch.organization %></li><br>
       <li><%= @branch.date %></li><br>
@@ -9,8 +9,8 @@
 </div>
 <div class="buttons">
   <% if policy(@branch).update? %>
-    <%= link_to 'Edit', edit_city_branch_path(@branch), :class => "btn btn-warning"%>
-    <%= link_to 'Delete', city_branch_path(@branch), :class => "btn btn-danger"%>
+    <%= link_to 'Edit', edit_city_category_branch_path(@branch), :class => "btn btn-warning"%>
+    <%= link_to 'Delete', city_category_branch_path(@branch), :class => "btn btn-danger"%>
   <% end %>
-  <%= link_to 'Back', city_category_path, :class => "btn btn-default" %>
+    <%= link_to 'Back', city_category_path(@branch.city_id, @branch.category_id), :class => "btn btn-default" %>
 </div>

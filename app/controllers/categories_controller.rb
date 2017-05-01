@@ -6,7 +6,7 @@ class CategoriesController < ApplicationController
         if @city.nil?
           redirect_to cities_path, alert: "City not found"
         else
-          @categories = City.categories
+          @categories = @city.categories
         end
       else
         @categories = Category.all

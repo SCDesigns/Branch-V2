@@ -7,10 +7,9 @@
   </ul>
   <% else %>
   <ul class="nav navbar-nav navbar-right">
-    <li id="hello"> <%= "Signed in as: "%><strong><%="#{current_user.name}"%></strong></li>
+    <li id="hello"> <%= "Signed in as: "%><strong><%="#{current_user.name}".capitalize%></strong></li>
     <li> <%= link_to "Sign Out",  destroy_user_session_path, :method => :delete %></li>
   </ul>
   <% end %>
   </ul>
 </nav>
-<div class="banner"><img src="<%= asset_path( 'branchheader.png' )%>"></div><br>

@@ -1,8 +1,10 @@
 class User < ApplicationRecord
-  enum role: [:user, :admin]
   has_many :branches
   has_many :comments
   has_many :attendees
+
+  enum role: [:user, :admin]
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,

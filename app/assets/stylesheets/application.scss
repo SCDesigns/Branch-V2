@@ -17,7 +17,7 @@
  @import "bootstrap";
  /* Some Style from the Bootstrap Default Theme */
 body {
-  background-image: url('/assets/background.png');
+  background-image: url('/assets/background.png'); /* Bird on a Branch : ajmaines (https://interfacelift.com/wallpaper/details/1819/bird_on_a_branch.html); */
    background-color: #E0E0E0;
    padding-top: 70px;
    text-align: center;
@@ -31,6 +31,7 @@ body {
   text-align: center;
   margin: 0 auto;
   max-width: 40vw;
+  color: #FFFFFF;
 }
 .lead {
   color: #FFFFFF;

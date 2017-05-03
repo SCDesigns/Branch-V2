@@ -17,6 +17,7 @@ class CategoriesController < ApplicationController
       if params[:city_id]
         @city = City.find_by(id: params[:city_id])
         @category = Category.find_by(id: params[:id])
+        @branches = Branch.where(:city_id => @city.id, :category_id => @category.id).all
         if @category.nil?
           redirect_to city_categories_path(@city), alert: "Category not found"
         end
@@ -76,6 +77,6 @@ class CategoriesController < ApplicationController
     private
 
     def category_params
-      params.require(:category).permit(:name, :city_name, :city_id)
+      params.require(:category).permit(:name, :city)
     end
   end

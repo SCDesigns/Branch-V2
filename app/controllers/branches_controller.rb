@@ -10,7 +10,14 @@ class BranchesController < ApplicationController
   end
 
   def create
-    @branches = Branch.new(branch_params)
+    @branch = Branch.new(branch_params)
+    if @branch.save
+        flash[:notice] = "Branch successfully created!"
+        redirect_to 'branches_path'
+    else
+        flash[:notice] = "Branch successfully created!"
+       render 'new'
+     end
   end
 
   def index
@@ -35,8 +42,15 @@ class BranchesController < ApplicationController
     end
   end
 
+  def destroy
+    @branch = Branch.find(params[:id])
+    @branch.destroy
+    flash[:notice] = "Branch deleted."
+    redirect_to city_category_path
+  end
+
   private
   def branch_params
-    params.require(:branch).permit(:name, :city, :organization, :date, :location, :info)
+    params.require(:branch).permit(:name, :organization, :date, :location, :info, :branch_attributes => [:city, :category])
   end
 end

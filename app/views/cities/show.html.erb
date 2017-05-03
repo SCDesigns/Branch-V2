@@ -10,8 +10,11 @@
   <%end%>
 </div>
   <div class="buttons">
+    <% if policy(@city).update? %>
       <%= link_to 'Edit', edit_city_path(@city), :class => "btn btn-warning"%>
-      <%= link_to 'Delete', city_path(@city), :class => "btn btn-danger"%>
+      <%= link_to 'Delete', city_path(@city), :method => :delete, :class => "btn btn-danger"%>
+      <%= link_to "New Category", new_city_category_path(@city), :class => "btn btn-success" %>
+    <% end %>
     <%= link_to 'Back', cities_path, :class => "btn btn-default" %>
   </div>
 </div>

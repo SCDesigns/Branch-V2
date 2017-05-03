@@ -8,6 +8,9 @@
   </ul>
   <% end %>
   <div class="buttons">
+    <% if policy(@cities).new? %>
       <%= link_to 'New City', new_city_path, :class => "btn btn-default" %>
+    <% end %>
+
   </div>
 </div>

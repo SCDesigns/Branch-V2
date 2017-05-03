@@ -72,7 +72,7 @@ class CategoriesController < ApplicationController
       @category = Category.find(params[:id])
       @category.destroy
       flash[:notice] = "Category deleted."
-      redirect_to city_categories_path
+      redirect_to cities_path
       #because category is delete it loses it's association w/ city.
       #Resulting in "City not Found Error"
     end

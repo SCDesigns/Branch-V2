@@ -22,6 +22,17 @@ body {
    padding-top: 70px;
    text-align: center;
 }
+.alert {
+  margin: 0 auto 20px;
+  max-width: 40vw;
+}
+#hello {
+  padding: 0 10px;
+  margin-top: 15px;
+}
+.lead {
+  color: #FFFFFF;
+}
 .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
   color: #2A677D;
   font-weight: bold;
@@ -32,18 +43,4 @@ body {
   margin: 0 auto;
   max-width: 40vw;
   color: #FFFFFF;
-}
-.lead {
-  color: #FFFFFF;
-}
-#hello {
-  padding: 0 10px;
-  margin-top: 15px;
-}
-.banner {
-  margin-top: -19px;
-}
-.banner img {
-  height: inherit;
-  width: 100vw;
 }

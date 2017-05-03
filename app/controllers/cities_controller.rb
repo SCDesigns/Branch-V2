@@ -13,13 +13,14 @@ class CitiesController < ApplicationController
   end
 
   def create
-    @city = City.find_or_create_by_name(city_params)
+    @city = City.new(city_params)
     if @city.save
-        flash[:notice] = "City successfully created!"
-        redirect_to 'cities_path'
+      redirect_to @city
+      flash[:success] = "City successfully created!"
     else
-       render 'new'
-     end
+      flash[:alert] = "Error. Fields cannot be left blank"
+      render :new
+    end
   end
 
   def edit
@@ -28,10 +29,11 @@ class CitiesController < ApplicationController
 
   def update
     @city = City.find(params[:id])
-    authorize @city.update(city_params)
     if @city.save
       redirect_to @city
+      flash[:success] = "City successfully updated!"
     else
+      flash[:alert] = "Error. Fields cannot be left blank"
       render :edit
     end
   end
@@ -39,7 +41,7 @@ class CitiesController < ApplicationController
   def destroy
     @city = City.find(params[:id])
     @city.destroy
-    flash[:notice] = "City deleted."
+    flash[:error] = "City successfully deleted."
     redirect_to cities_path
   end
 

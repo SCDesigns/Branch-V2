@@ -27,18 +27,19 @@ class CategoriesController < ApplicationController
     end
 
     def new
-      if params[:city_id] && !City.exists?(params[:city_id])
-        redirect_to cities_path, alert: "City not found"
-      else
-        @category = Category.new(city_id: params[:city_id])
-      end
+      @category = Category.new
+      @city =  City.find_by(id: params[:city_id])
     end
 
     def create
       @category = Category.new(category_params)
+      @city =  City.find_by(id: params[:city_id])
       if @category.save
-        redirect_to @category
+        @city.categories << @category
+        redirect_to city_category_path(@city, @category)
+        flash[:success] = "Category successfully created!"
       else
+        flash[:alert] = "Error. Fields cannot be left blank"
         render :new
       end
     end
@@ -71,7 +72,9 @@ class CategoriesController < ApplicationController
       @category = Category.find(params[:id])
       @category.destroy
       flash[:notice] = "Category deleted."
-      redirect_to categories_path
+      redirect_to city_categories_path
+      #because category is delete it loses it's association w/ city.
+      #Resulting in "City not Found Error"
     end
 
     private

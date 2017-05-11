@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170501194323) do
+ActiveRecord::Schema.define(version: 20170511183208) do
 
   create_table "attendees", force: :cascade do |t|
     t.integer  "branch_id"
@@ -39,16 +39,23 @@ ActiveRecord::Schema.define(version: 20170501194323) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
-    t.integer  "city_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["city_id"], name: "index_categories_on_city_id"
   end
 
   create_table "cities", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "city_categories", force: :cascade do |t|
+    t.integer  "city_id"
+    t.integer  "category_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["category_id"], name: "index_city_categories_on_category_id"
+    t.index ["city_id"], name: "index_city_categories_on_city_id"
   end
 
   create_table "comments", force: :cascade do |t|

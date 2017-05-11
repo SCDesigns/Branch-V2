@@ -7,4 +7,7 @@ Rails.application.routes.draw do
       resources :branches
     end
   end
+
+  resources :categories
+  resources :branches
 end

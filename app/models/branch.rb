@@ -7,6 +7,5 @@ class Branch < ApplicationRecord
   has_many :attendees
   has_many :comments, through: :attendees
 
-  validates :organization, :date, :location, :info, presence: true
-  validates :name, uniqueness: true, presence: true
+  validates :name, :organization, :date, :location, :info, presence: true
 end

@@ -1,56 +1,73 @@
 class BranchesController < ApplicationController
   before_action :authenticate_user!
 
-  def new
-    if params[:city_id] && !City.exists?(params[:city_id])
-      redirect_to cities_path, alert: "City not found"
-    else
-      @branch = Branch.new(city_id: params[:city_id])
-    end
-  end
-
-  def create
-    @branch = Branch.new(branch_params)
-    if @branch.save
-        flash[:notice] = "Branch successfully created!"
-        redirect_to 'branches_path'
-    else
-        flash[:notice] = "Branch successfully created!"
-       render 'new'
-     end
-  end
-
   def index
-    if params[:city_id]
-      @branches = City.find(params[:city_id]).branches
-    else
-      @branches = Branch.all
-    end
+    @branches = Branch.where(:city_id => @city.id, :category_id => @category.id).all
   end
 
   def show
-    @branch = Branch.find(params[:id])
+    if params[:city_id] && params[:category_id]
+        @city = City.find_by(id: params[:city_id])
+        @category = Category.find_by(id: params[:category_id])
+        @branch = Branch.find_by(id: params[:id])
+      if @category.nil?
+        redirect_to city_categories_path(@city)
+        flash[:alert] = "Category not found"
+      end
+    else
+      @category = Category.find(params[:id])
+    end
+  end
+
+  def new
+    @city = City.find_by(id: params[:city_id])
+    @category = Category.find_by(id: params[:category_id])
+    @branch = Branch.new
+  end
+
+  def create
+    @city = City.find_by(id: params[:city_id])
+    @category = Category.find_by(id: params[:category_id])
+    @branch = Branch.new(branch_params)
+    @branch.city = @city
+    @branch.category = @category
+    @branch.user = current_user
+    if @branch.save
+      redirect_to city_category_branch_path(@branch.city, @branch.category, @branch)
+      flash[:success] = "Branch successfully created!"
+    else
+      flash[:alert] = "Error. Fields cannot be left blank"
+      render :new
+    end
+  end
+
+  def edit
+    @city = City.find_by(id: params[:city_id])
+    @category = Category.find_by(id: params[:category_id])
+    @branch = Branch.find_by(params[:id])
   end
 
   def update
-    @branch = Branch.find(params[:id])
-    authorize @branch
-    if @branch.update(branch_params)
-      redirect_to @branch
-    else
-      render :edit
-    end
+    @city = City.find_by(id: params[:city_id])
+    @category = Category.find_by(id: params[:category_id])
+    @branch = Branch.find_by(params[:id])
+    @branch.update(branch_params)
+  if @branch.update(branch_params)
+    redirect_to city_category_branch_path(@branch)
+  else
+    render :edit
+  end
   end
 
   def destroy
     @branch = Branch.find(params[:id])
     @branch.destroy
-    flash[:notice] = "Branch deleted."
-    redirect_to city_category_path
+    flash[:error] = "Branch deleted."
+    redirect_to city_categories_path
   end
 
   private
   def branch_params
-    params.require(:branch).permit(:name, :organization, :date, :location, :info, :branch_attributes => [:city, :category])
+    params.require(:branch).permit(:name, :organization, :date, :location, :info)
   end
 end

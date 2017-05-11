@@ -1,8 +1,7 @@
 <div class="container" id="form">
-  <%= form_for @branch, url:  city_category_branches_path do |f| %>
-    <h3><%= city_select(@branch.city, @branch) %></h3><br>
-    <%= category_select(@branch.category, @branch) %><br>
-
+  <%= form_for [@city, @branch], url: city_category_branches_path do |f| %>
+    <h4>City: <%= city_select(@city, @branch) %></h4> <br>
+    <h4>Category: <%= @category.name %></h4> <br>
     <%= f.label :name %>:
     <%= f.text_field :name %><br>
 

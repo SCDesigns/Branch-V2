@@ -2,6 +2,7 @@ class CitiesController < ApplicationController
   before_action :authenticate_user!
 
   def new
+    @city = City.new
   end
 
   def index
@@ -29,6 +30,7 @@ class CitiesController < ApplicationController
 
   def update
     @city = City.find(params[:id])
+    @city.update(city_params)
     if @city.save
       redirect_to @city
       flash[:success] = "City successfully updated!"

@@ -16,13 +16,7 @@ end
 
 def make_categories
   ['Music','Sports','Theatre','Tourism'].each do |name|
-    Category.create(name: name, city_id: 1)
-  end
-  ['Music','Sports','Theatre','Tourism'].each do |name|
-    Category.create(name: name, city_id: 2)
-  end
-  ['Music','Sports','Theatre','Tourism'].each do |name|
-    Category.create(name: name, city_id: 3)
+    Category.create(name: name, city_ids: [1, 2, 3])
   end
 end
 

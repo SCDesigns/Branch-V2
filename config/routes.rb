@@ -3,11 +3,10 @@ Rails.application.routes.draw do
   root 'welcome#home'
   # resources :attendees
   resources :cities do
-    resources :categories do
+    resources :categories, only: [:index, :show] do
       resources :branches
     end
   end
 
   resources :categories
-  resources :branches
 end

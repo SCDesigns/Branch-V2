@@ -1,31 +1,29 @@
 class CategoriesController < ApplicationController
   before_action :authenticate_user!
-
   def index
-    if params[:city_id]
-      @city = City.find_by(id: params[:city_id])
-      if @city.nil?
-        redirect_to cities_path
-        flash[:alert] = "City not found"
+      if params[:city_id]
+        @city = City.find_by(id: params[:city_id])
+        if @city.nil?
+          redirect_to cities_path, alert: "City not found"
+        else
+          @categories = @city.categories
+        end
       else
-        @categories = @city.categories
+        @categories = Category.all
       end
-    else
-      @categories = Category.all
     end
-  end
 
   def show
-    if params[:city_id]
-      @city = City.find(params[:city_id])
-      @category = Category.find_by(id: params[:id])
-      @branches = Branch.where(:city_id => @city.id, :category_id => @category.id).all
+    if params[:city_id].present?
+      @city = City.find_by(id: params[:city_id])
+      @category = Category.find(params[:id])
+        @branches = Branch.where(:city_id => @city.id, :category_id => @category.id).all
       if @category.nil?
-        redirect_to city_categories_path(@city)
-        flash[:alert] = "Category not found"
+        redirect_to city_categories_path(@city), alert: "Category not found"
       end
     else
       @category = Category.find(params[:id])
+      @branches = Branch.where(:category_id => @category.id).all
     end
   end
 
@@ -33,25 +31,26 @@ class CategoriesController < ApplicationController
     @category = Category.new
   end
 
-
   def create
-    @city = City.find_by(id: params[:city_id])
     @category = Category.new(category_params)
-    @category.save
-    @city.categories << @category
-    redirect_to city_path(@city)
-    flash[:success] = "Category successfully created!"
+    if @category.save
+      redirect_to '/'
+      flash[:success] = "Category successfully created!"
+    else
+      flash[:alert] = "Error. Fields cannot be left blank"
+      render :new
+    end
   end
 
   def edit
-    @category = Category.find(params[:id])
+    @category = Category.find_by(params[:id])
   end
 
   def update
-    @category = Category.find(params[:id])
+    @category = Category.find_by(id: params[:id])
     @category.update(category_params)
-    if @category.save!
-      redirect_to city_category_path(@category)
+    if @category.save
+      redirect_to cities_path
     else
       render :edit
     end
@@ -60,13 +59,15 @@ class CategoriesController < ApplicationController
   def destroy
     @category = Category.find(params[:id])
     @category.destroy
-    flash[:error] = "Category deleted."
+    flash[:notice] = "Category deleted."
     redirect_to cities_path
+    #because category is delete it loses it's association w/ city.
+    #Resulting in "City not Found Error"
   end
 
   private
 
   def category_params
-    params.require(:category).permit(:name)
+    params.require(:category).permit(:name, :city_ids => [], :cities_attributes => [:name])
   end
 end

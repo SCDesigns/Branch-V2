@@ -44,16 +44,16 @@ class BranchesController < ApplicationController
   def edit
     @city = City.find_by(id: params[:city_id])
     @category = Category.find_by(id: params[:category_id])
-    @branch = Branch.find_by(params[:id])
+    @branch = Branch.find(params[:id])
   end
 
   def update
     @city = City.find_by(id: params[:city_id])
     @category = Category.find_by(id: params[:category_id])
-    @branch = Branch.find_by(params[:id])
+    @branch = Branch.find(params[:id])
     @branch.update(branch_params)
-  if @branch.update(branch_params)
-    redirect_to city_category_branch_path(@branch)
+  if @branch.save
+    redirect_to city_category_branch_path(@city, @category, @branch)
   else
     render :edit
   end
@@ -63,7 +63,7 @@ class BranchesController < ApplicationController
     @branch = Branch.find(params[:id])
     @branch.destroy
     flash[:error] = "Branch deleted."
-    redirect_to city_categories_path
+    redirect_to cities_path
   end
 
   private

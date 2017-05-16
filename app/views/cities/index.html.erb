@@ -4,7 +4,7 @@
 <div class="container">
   <% @cities.each do |city| %>
   <ul id="cont">
-    <h4><li id="cont_item"><%= link_to city.name, city_path(city) %></li></h4><br>
+    <h3><li id="cont_item"><%= link_to city.name, city_path(city) %></li></h3><br>
   </ul>
   <% end %>
   <div class="buttons">

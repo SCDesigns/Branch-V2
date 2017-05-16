@@ -1,9 +1,9 @@
-<div class="container" id="form">
+<div class="container form">
   <%= form_for city do |f| %>
     <h3> City Form </h3><br>
-    <%= f.label :name %>:
+    <%= f.label :name %><br>
     <%= f.text_field :name %><br><br>
     <%= f.collection_check_boxes :category_ids, Category.all, :id, :name %><br><br>
-    <%= f.submit %>
+    <%= f.submit :class => 'submit' %>
   <% end %>
 </div>

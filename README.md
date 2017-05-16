@@ -15,6 +15,10 @@ Branch: Ruby on Rails Content Management System for local events &amp; meet-ups
 
 <p data-visibility='hidden'>View <a href='https://github.com/SCDesigns/Branch-V2' title='Branch'>Branch</a> on Github</p>
 
+## Tutorial / Walkthrough
+
+[![Branch Walkthrough](https://img.youtube.com/vi/XP2PTTsHNTw/0.jpg)](https://www.youtube.com/watch?v=XP2PTTsHNTw)
+
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/SCDesigns/Branch-V2. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](contributor-covenant.org) code of conduct.

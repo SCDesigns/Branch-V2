@@ -5,14 +5,6 @@ class CitiesController < ApplicationController
     @city = City.new
   end
 
-  def index
-    @cities = City.all
-  end
-
-  def show
-    @city = City.find(params[:id])
-  end
-
   def create
     @city = City.new(city_params)
     if @city.save
@@ -22,6 +14,14 @@ class CitiesController < ApplicationController
       flash[:alert] = "Error. Fields cannot be left blank"
       render :new
     end
+  end
+
+  def index
+    @cities = City.all
+  end
+
+  def show
+    @city = City.find(params[:id])
   end
 
   def edit

@@ -2,7 +2,7 @@
   <h3><b><%= @city.name %></b><br></h3>
 </div>
 <div class="container">
-  Categories:
+  <strong>Categories:</strong>
   <% @city.categories.each do |category| %>
     <ul id="ctg">
       <li id="cat"><%= link_to category.name, city_category_path(@city, category) %></li>

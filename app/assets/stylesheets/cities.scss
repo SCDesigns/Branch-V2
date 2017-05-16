@@ -1,6 +1,9 @@
 // Place all the styles related to the Cities controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.city_mod {
+  border-radius: 5px !important;
+}
 #cont {
   list-style-type: none;
   margin: 0 auto;

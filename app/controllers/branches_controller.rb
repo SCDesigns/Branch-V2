@@ -1,23 +1,7 @@
 class BranchesController < ApplicationController
   before_action :authenticate_user!
 
-  def index
-    @branches = Branch.where(:city_id => @city.id, :category_id => @category.id).all
-  end
-
-  def show
-    if params[:city_id] && params[:category_id]
-        @city = City.find_by(id: params[:city_id])
-        @category = Category.find_by(id: params[:category_id])
-        @branch = Branch.find_by(id: params[:id])
-      if @category.nil?
-        redirect_to city_categories_path(@city)
-        flash[:alert] = "Category not found"
-      end
-    else
-      @category = Category.find(params[:id])
-    end
-  end
+  @recent_branches = Branch.most_recent
 
   def new
     @city = City.find_by(id: params[:city_id])
@@ -38,6 +22,24 @@ class BranchesController < ApplicationController
     else
       flash[:alert] = "Error. Fields cannot be left blank"
       render :new
+    end
+  end
+
+  def index
+    @branches = Branch.where(:city_id => @city.id, :category_id => @category.id).all
+  end
+
+  def show
+    if params[:city_id] && params[:category_id]
+        @city = City.find_by(id: params[:city_id])
+        @category = Category.find_by(id: params[:category_id])
+        @branch = Branch.find_by(id: params[:id])
+      if @category.nil?
+        redirect_to city_categories_path(@city)
+        flash[:alert] = "Category not found"
+      end
+    else
+      @category = Category.find(params[:id])
     end
   end
 

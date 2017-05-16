@@ -1,5 +1,21 @@
 class CategoriesController < ApplicationController
   before_action :authenticate_user!
+
+  def new
+    @category = Category.new
+  end
+
+  def create
+    @category = Category.new(category_params)
+    if @category.save
+      redirect_to '/'
+      flash[:success] = "Category successfully created!"
+    else
+      flash[:alert] = "Error. Fields cannot be left blank"
+      render :new
+    end
+  end
+
   def index
       if params[:city_id]
         @city = City.find_by(id: params[:city_id])
@@ -17,7 +33,7 @@ class CategoriesController < ApplicationController
     if params[:city_id].present?
       @city = City.find_by(id: params[:city_id])
       @category = Category.find(params[:id])
-        @branches = Branch.where(:city_id => @city.id, :category_id => @category.id).all
+      @branches = Branch.where(:city_id => @city.id, :category_id => @category.id).all
       if @category.nil?
         redirect_to city_categories_path(@city), alert: "Category not found"
       end
@@ -27,23 +43,8 @@ class CategoriesController < ApplicationController
     end
   end
 
-  def new
-    @category = Category.new
-  end
-
-  def create
-    @category = Category.new(category_params)
-    if @category.save
-      redirect_to '/'
-      flash[:success] = "Category successfully created!"
-    else
-      flash[:alert] = "Error. Fields cannot be left blank"
-      render :new
-    end
-  end
-
   def edit
-    @category = Category.find_by(params[:id])
+    @category = Category.find_by(id: params[:id])
   end
 
   def update
@@ -57,12 +58,10 @@ class CategoriesController < ApplicationController
   end
 
   def destroy
-    @category = Category.find(params[:id])
+    @category = Category.find_by(id: params[:id])
     @category.destroy
     flash[:notice] = "Category deleted."
     redirect_to cities_path
-    #because category is delete it loses it's association w/ city.
-    #Resulting in "City not Found Error"
   end
 
   private

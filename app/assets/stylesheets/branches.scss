@@ -11,7 +11,6 @@
 .btn-default > a:hover {
   background-color: #00e676;
   color: #FFFFFF;
-  border: none;
   font-weight: bold;
 }
 .buttons {
@@ -20,40 +19,8 @@
   justify-content: center;
   align-items: center;
 }
-.container {
-   text-align: left;
-   margin: 0 auto;
-   padding: 15px 10px;
-   max-width: 40vw;
-   background-color: #FFFFFF;
-   font-family: "Helvetica Neue", Roboto, "Segoe UI", Calibri, sans-serif;
-   font-size: 15px;
-   font-weight: bold;
-   line-height: 25px;
-   border-color: #eee #ddd #bbb;
-   border-style: solid;
-   border-width: 1px;
-   box-shadow: 0 2px 3px rgba(0, 0, 0, 0.15);
-}
-.container a {
-  color: #2A677D;
-  text-decoration: underline #D8E435;
-}
-.sub_container {
-   text-align: left;
-   margin: 0 auto;
-   padding: 15px 10px;
-   max-width: 35vw;
-   font-family: "Helvetica Neue", Roboto, "Segoe UI", Calibri, sans-serif;
-   font-size: 15px;
-   font-weight: bold;
-   line-height: 25px;
-}
 .feed {
   margin: 0 auto;
-}
-#form {
-  text-align: center;
 }
 h3 {
   margin: 0 auto;

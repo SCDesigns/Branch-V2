@@ -1,8 +1,6 @@
 class BranchesController < ApplicationController
   before_action :authenticate_user!
 
-  @recent_branches = Branch.most_recent
-
   def new
     @city = City.find_by(id: params[:city_id])
     @category = Category.find_by(id: params[:category_id])

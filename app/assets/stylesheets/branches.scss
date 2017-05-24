@@ -3,6 +3,9 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 #align_left {
   text-align: left;
+  max-width: 35vw;
+  font-size: 15px;
+  font-weight: bold;
 }
 .feed {
   margin: 0 auto;

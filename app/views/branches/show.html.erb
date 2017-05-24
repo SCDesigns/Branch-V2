@@ -1,10 +1,10 @@
 <div class="container title">
-  <h4><%= @branch.name %></h4><br>
+  <h3><b><%= @branch.name %><br></h3>
 </div>
 <div class="container">
   <ul id="align_left">
     <li><%= @branch.organization %></li><br>
-    <li><%= @branch.date %></li><br>
+    <li><%= @branch.date.strftime("%b %e, %Y - %l:%M %P") %></li><br>
     <li><%= @branch.location %></li><br>
     <li><%= @branch.info %></li>
   </ul>

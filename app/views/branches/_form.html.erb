@@ -8,14 +8,17 @@
     <%= f.label :organization %><br>
     <%= f.text_field :organization %><br>
 
-    <%= f.label :date %><br>
-    <%= f.text_field :date %><br>
-
     <%= f.label :location %><br>
     <%= f.text_field :location %><br>
 
     <%= f.label :info %><br>
     <%= f.text_area :info %><br>
+
+    <br>
+    <%= f.label :date %><br>
+    <%= f.datetime_select :date, order: [:month, :day, :year],
+    start_year: Date.current.year, default: Time.now, ampm: true %><br>
+    <br>
 
     <%= f.submit :class => 'submit' %>
   <% end %>

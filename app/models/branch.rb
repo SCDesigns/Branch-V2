@@ -8,8 +8,4 @@ class Branch < ApplicationRecord
   has_many :comments, through: :attendees
 
   validates :name, :organization, :date, :location, :info, presence: true
-
-  def self.most_recent
-    order("created_at desc")
-  end
 end

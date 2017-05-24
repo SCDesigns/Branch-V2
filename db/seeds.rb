@@ -47,7 +47,8 @@ def make_branches
     info: "For Tickets & Game Times Visit - http://madisonsquaregarden.ticketoffices.com/New+York+Rangers",
     user: User.find_by(id: 2),
     category: Category.find_by(id: 2),
-    city: City.find_by(id: 1))
+    city: City.find_by(id: 1)
+  )
   Branch.create(
     name: "New York Rangers vs. Montreal Canadiens - Game 7 (If Necessary)",
     organization: "NHL",
@@ -56,16 +57,18 @@ def make_branches
     info: "For Tickets & Game Times Visit - http://madisonsquaregarden.ticketoffices.com/New+York+Rangers",
     user: User.find_by(id: 2),
     category: Category.find_by(id: 2),
-    city: City.find_by(id: 1))
+    city: City.find_by(id: 1)
+  )
   Branch.create(
     name: "The All Access Tour",
-    organization: "MSG",
+    organization: "NHL",
     date: "All Non-Event Days - See Info",
     location: "Madison Sqaure Garden - 4 Pennsylvania Plaza, New York, NY 10001",
     info: "Call 212.465.6741 or Visit http://www.thegarden.com/calendar",
     user: User.find_by(id: 2),
     category: Category.find_by(id: 4),
-    city: City.find_by(id: 1))
+    city: City.find_by(id: 1)
+  )
   Branch.create(
     name: "Urban Word NYC Teen Poetry Grand Slam Final",
     organization: "Apollo Theatre Foundation",
@@ -74,7 +77,8 @@ def make_branches
     info: "For Tickets & More Info - https://www.apollotheater.org/calendar/",
     user: User.find_by(id: 2),
     category: Category.find_by(id: 3),
-    city: City.find_by(id: 1))
+    city: City.find_by(id: 1)
+  )
   Branch.create(
     name: "Salon Series: Maurice Chestnut & Friends",
     organization: "Apollo Theatre Foundation",
@@ -83,29 +87,32 @@ def make_branches
     info: "For Tickets & More Info - https://www.apollotheater.org/calendar/",
     user: User.find_by(id: 2),
     category: Category.find_by(id: 3),
-    city: City.find_by(id: 1))
+    city: City.find_by(id: 1)
+  )
 
 ##########
 #  CHI   #
 ##########
   Branch.create(
     name: "Chicago Blackhawks vs. Nashville Predators - Game 4",
-    organization: "United Center",
+    organization: "NHL",
     date: "Thursday, April 20th, 8:00 PM",
     location: "United Center - 1901 W Madison St, Chicago, IL 60612",
     info: "For Tickets & More Info - http://www.unitedcenter.com/",
     user: User.find_by(id: 3),
     category: Category.find_by(id: 2),
-    city: City.find_by(id: 2))
+    city: City.find_by(id: 2)
+  )
   Branch.create(
     name: "Chicago Bulls vs. Boston Celtics - Game 3",
-    organization: "United Center",
+    organization: "NHL",
     date: "Friday, April 21st, 7:00 PM",
     location: "Apollo Theatre - 253 W 125th St, New York, NY 10027",
     info: "For Tickets & More Info - http://www.unitedcenter.com/",
     user: User.find_by(id: 3),
     category: Category.find_by(id: 2),
-    city: City.find_by(id: 2))
+    city: City.find_by(id: 2)
+  )
   Branch.create(
     name: "Monster Energy Outbreak Presents: 21 Savage ‑ Issa Tour",
     organization: "House of Blues Chicago",
@@ -114,7 +121,8 @@ def make_branches
     info: "For Tickets & Schedule - http://www.ticketmaster.com/House-of-Blues-Chicago-tickets-Chicago/venue/32905",
     user: User.find_by(id: 4),
     category: Category.find_by(id: 1),
-    city: City.find_by(id: 2))
+    city: City.find_by(id: 2)
+  )
 
 ##########
 #  LA   #
@@ -127,22 +135,24 @@ def make_branches
     info: "For Tickets & Schedule - http://www.livenation.com/venues/14273/hollywood-bowl",
     user: User.find_by(id: 5),
     category: Category.find_by(id: 1),
-    city: City.find_by(id: 3))
+    city: City.find_by(id: 3)
+  )
 
 end
 
 def make_comments
-# :branch.find_by(id:, :user: User.find_by(id:, :title, :content
   Comment.create(
     branch: Branch.find_by(id: 4),
     user: User.find_by(id: 7),
     title: "Can't Wait!!",
-    content: "Been meaning to see Lionel live, but what's Mariah Carey gonna sing? Like Christmas songs...???")
+    content: "Been meaning to see Lionel live, but what's Mariah Carey gonna sing? Like Christmas songs...???"
+  )
   Comment.create(
     branch: Branch.find_by(id: 4),
     user: User.find_by(id: 7),
     title: "Will 22 Savage also be there?",
-    content: "I heard he's not as good but I think they should collab.")
+    content: "I heard he's not as good but I think they should collab."
+  )
 end
 
 make_seeds

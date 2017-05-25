@@ -12,7 +12,7 @@ class CategoriesController < ApplicationController
       redirect_to '/'
       flash[:success] = "Category successfully created!"
     else
-      flash[:alert] = "Error. Fields cannot be left blank"
+      flash[:alert] = "Error: Category is blank or already exists."
       render :new
     end
   end
@@ -21,7 +21,7 @@ class CategoriesController < ApplicationController
       if params[:city_id]
         @city = City.find_by(id: params[:city_id])
         if @city.nil?
-          redirect_to cities_path, alert: "City not found"
+          redirect_to cities_path, alert: "Error: City not found"
         else
           @categories = @city.categories
         end
@@ -36,7 +36,7 @@ class CategoriesController < ApplicationController
       @category = Category.find(params[:id])
       @branches = Branch.where(:city_id => @city.id, :category_id => @category.id).all
       if @category.nil?
-        redirect_to city_categories_path(@city), alert: "Category not found"
+        redirect_to city_categories_path(@city), alert: "Error: Category not found"
       end
     else
       @category = Category.find(params[:id])
@@ -54,6 +54,7 @@ class CategoriesController < ApplicationController
     if @category.save
       redirect_to cities_path
     else
+      flash[:alert] = "Error: Category is blank or already exists."
       render :edit
     end
   end

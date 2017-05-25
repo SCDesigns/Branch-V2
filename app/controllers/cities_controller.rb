@@ -3,6 +3,7 @@ class CitiesController < ApplicationController
 
   def new
     @city = City.new
+    @city.categories.build
   end
 
   def create
@@ -11,7 +12,7 @@ class CitiesController < ApplicationController
       redirect_to @city
       flash[:success] = "City successfully created!"
     else
-      flash[:alert] = "Error. Fields cannot be left blank"
+      flash[:alert] = "Error: City is blank or already exists."
       render :new
     end
   end
@@ -35,7 +36,7 @@ class CitiesController < ApplicationController
       redirect_to @city
       flash[:success] = "City successfully updated!"
     else
-      flash[:alert] = "Error. Fields cannot be left blank"
+      flash[:alert] = "Error: City is blank or already exists."
       render :edit
     end
   end

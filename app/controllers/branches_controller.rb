@@ -23,6 +23,10 @@ class BranchesController < ApplicationController
     end
   end
 
+  def recent
+    @recent_branches = Branch.most_recent
+  end
+
   def index
     @branches = Branch.where(:city_id => @city.id, :category_id => @category.id).all
   end

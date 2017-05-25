@@ -3,6 +3,7 @@ class CategoriesController < ApplicationController
 
   def new
     @category = Category.new
+    @category.cities.build
   end
 
   def create

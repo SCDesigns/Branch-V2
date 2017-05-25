@@ -1,7 +1,11 @@
 <div class="container form">
   <%= form_for @category do |f| %>
-    <%= f.label :name %><br>
+    <%= f.label :category_name %><br>
     <%= f.text_field :name %><br><br>
+    <%= f.fields_for :cities do |c| %>
+      <%= c.label :city_name %><br>
+      <%= c.text_field :name %><br><br>
+    <% end %>
     <%= f.collection_check_boxes :city_ids, City.all, :id, :name %><br>
     <%= f.submit :class => 'submit' %>
     <% end %>

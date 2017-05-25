@@ -7,4 +7,6 @@ Rails.application.routes.draw do
       resources :branches
     end
   end
+
+  get '/recent', to: 'branches#recent'
 end

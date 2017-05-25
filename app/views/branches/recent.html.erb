@@ -1,0 +1,16 @@
+<div class="container title">
+  <h3><b><%= "Most Recent Branches" %><br></h3>
+</div>
+<div class="container">
+<% @recent_branches.each do |branch| %>
+    <div class="sub_container">
+    <b><%= link_to branch.name, city_category_branch_path(branch.city, branch.category, branch)  %></b><br>
+      <ul>
+        <li><%= branch.organization %></li><br>
+        <li><%= branch.date %></li><br>
+        <li><%= branch.location %></li><br>
+        <li><%= branch.info %></li>
+      </ul>
+    </div>
+<% end %>
+</div>

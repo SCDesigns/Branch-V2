@@ -9,6 +9,11 @@
     <li><%= @branch.info %></li>
   </ul>
 </div>
+
+<p>
+  <%= link_to "Load Comments", branch_comments_path(@branch)
+</p>
+
 <div class="buttons">
   <% if policy(@branch).update? %>
     <%= link_to 'Edit', edit_city_category_branch_path(@city, @category, @branch), :class => "btn btn-warning"%>

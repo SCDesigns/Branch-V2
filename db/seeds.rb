@@ -5,7 +5,6 @@ def make_seeds
   make_categories
   make_users
   make_branches
-  make_comments
 end
 
 def make_cities
@@ -119,19 +118,6 @@ def make_branches
     user: User.find_by(id: 5),
     category: Category.find_by(id: 1),
     city: City.find_by(id: 3))
-end
-
-def make_comments
-  Comment.create(
-    branch: Branch.find_by(id: 4),
-    user: User.find_by(id: 7),
-    title: "Can't Wait!!",
-    content: "Been meaning to see Lionel live, but what's Mariah Carey gonna sing? Like Christmas songs...???")
-  Comment.create(
-    branch: Branch.find_by(id: 4),
-    user: User.find_by(id: 7),
-    title: "Will 22 Savage also be there?",
-    content: "I heard he's not as good but I think they should collab.")
 end
 
 make_seeds

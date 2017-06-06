@@ -10,9 +10,11 @@
   </ul>
 </div>
 
-<p>
-  <%= link_to "Load Comments", branch_comments_path(@branch) %>
-</p>
+<div class="container">
+  <p>
+    <%= link_to "Load Comments", branch_comments_path(@branch) %>
+  </p>
+</div>
 
 <div class="buttons">
   <% if policy(@branch).update? %>

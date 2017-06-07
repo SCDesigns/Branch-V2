@@ -12,8 +12,12 @@
 
 <div class="container">
   <p>
-    <%= link_to "Load Comments", branch_comments_path(@branch) %>
+    <%= link_to "Load Comments", branch_comments_path(@branch), :class => "load_comments" %>
   </p>
+</div>
+<div class="comments">
+  <ol>
+  </ol>
 </div>
 
 <div class="buttons">

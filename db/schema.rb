@@ -59,13 +59,11 @@ ActiveRecord::Schema.define(version: 20170511183208) do
   end
 
   create_table "comments", force: :cascade do |t|
-    t.integer  "branch_id"
-    t.integer  "user_id"
     t.text     "content"
+    t.integer  "branch_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["branch_id"], name: "index_comments_on_branch_id"
-    t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|

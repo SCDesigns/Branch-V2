@@ -8,7 +8,7 @@ class CreateBranches < ActiveRecord::Migration[5.0]
       t.string :organization
       t.datetime :date
       t.string :location
-      t.text :info # note text allows for longer description here than string in prev branch app
+      t.text :info # note: text allows for longer description here than string in prev branch app
       t.timestamps
     end
   end

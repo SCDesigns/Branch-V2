@@ -1,5 +1,5 @@
 class BranchesController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!, :set_branch, only: [:show, :edit, :update, :destroy]
 
   def new
     @city = City.find_by(id: params[:city_id])
@@ -24,7 +24,7 @@ class BranchesController < ApplicationController
   end
 
   def recent
-    @recent_branches = Branch.most_recent
+    @recent_branches = Branch.most_recent.limit(3) 
   end
 
   def index
@@ -35,7 +35,8 @@ class BranchesController < ApplicationController
     if params[:city_id] && params[:category_id]
         @city = City.find_by(id: params[:city_id])
         @category = Category.find_by(id: params[:category_id])
-        @branch = Branch.find_by(id: params[:id])
+        @comments = @branch.comments
+        @comment = Comment.new # @branch.comments.build
       if @category.nil?
         redirect_to city_categories_path(@city)
         flash[:alert] = "Category not found"
@@ -48,13 +49,11 @@ class BranchesController < ApplicationController
   def edit
     @city = City.find_by(id: params[:city_id])
     @category = Category.find_by(id: params[:category_id])
-    @branch = Branch.find(params[:id])
   end
 
   def update
     @city = City.find_by(id: params[:city_id])
     @category = Category.find_by(id: params[:category_id])
-    @branch = Branch.find(params[:id])
     @branch.update(branch_params)
   if @branch.save
     redirect_to city_category_branch_path(@city, @category, @branch)
@@ -64,7 +63,6 @@ class BranchesController < ApplicationController
   end
 
   def destroy
-    @branch = Branch.find(params[:id])
     @branch.destroy
     flash[:error] = "Branch deleted."
     redirect_to cities_path
@@ -74,4 +72,8 @@ class BranchesController < ApplicationController
   def branch_params
     params.require(:branch).permit(:name, :organization, :date, :location, :info)
   end
+
+  def set_branch
+     @branch =  Branch.find(params[:id])
+   end
 end

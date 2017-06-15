@@ -24,7 +24,7 @@ class BranchesController < ApplicationController
   end
 
   def recent
-    @recent_branches = Branch.most_recent.limit(3) 
+    @recent_branches = Branch.most_recent
   end
 
   def index

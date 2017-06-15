@@ -8,14 +8,7 @@ class CommentsController < ApplicationController
 
   def create
     @comment = @branch.comments.create(comments_params)
-    if @comment.save
-      # I need to render something that just has the LI I want...
-      # why not just create a comments/show view that shows the LI of one comment?
-      # render 'comments/show', :layout => false
-      render 'create.js', :layout => false
-    else
-      render "branches/show"
-    end
+    render :json => @comment
   end
 
 

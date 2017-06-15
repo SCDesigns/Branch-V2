@@ -64,6 +64,28 @@ body {
   color: #2A677D;
   text-decoration: underline #D8E435;
 }
+.comments {
+  margin: 10px auto;
+  padding: 15px 10px;
+  max-width: 40vw;
+  background-color: #FFFFFF;
+  font-family: "Helvetica Neue", Roboto, "Segoe UI", Calibri, sans-serif;
+  font-size: 15px;
+  line-height: 25px;
+  border-radius: 5px;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.15);
+}
+#new_comment {
+  margin: 10px auto;
+  padding: 15px 10px;
+  max-width: 40vw;
+  background-color: #FFFFFF;
+  font-family: "Helvetica Neue", Roboto, "Segoe UI", Calibri, sans-serif;
+  font-size: 15px;
+  line-height: 25px;
+  border-radius: 5px;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.15);
+}
 .form {
   text-align: center;
   border: 0;
@@ -90,6 +112,16 @@ body {
   text-decoration: underline #D8E435;
 }
 .submit {
+  background-color: #2A677D;
+  color: #D8E435;
+  border: none;
+  margin: 10px;
+  padding: 6px 12px;
+  white-space: nowrap;
+  font-weight: bold;
+  border-radius: 4px;
+}
+#new_comment > input[type="submit"] {
   background-color: #2A677D;
   color: #D8E435;
   border: none;

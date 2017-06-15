@@ -45,11 +45,11 @@ class CategoriesController < ApplicationController
   end
 
   def edit
-    @category = Category.find_by(id: params[:id])
+    @category = Category.find(params[:id])
   end
 
   def update
-    @category = Category.find_by(id: params[:id])
+    @category = Category.find(params[:id])
     @category.update(category_params)
     if @category.save
       redirect_to cities_path
@@ -60,7 +60,7 @@ class CategoriesController < ApplicationController
   end
 
   def destroy
-    @category = Category.find_by(id: params[:id])
+    @category = Category.find(params[:id])
     @category.destroy
     flash[:notice] = "Category deleted."
     redirect_to cities_path

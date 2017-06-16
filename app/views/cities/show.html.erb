@@ -1,11 +1,11 @@
 <div class="container title">
-  <h3><b><%= @city.name %></b><br></h3>
+  <h3><b><%= @city.name %></b></h3><br>
 </div>
 <div class="container">
   <strong>Categories:</strong>
   <% @city.categories.each do |category| %>
-    <ul id="ctg">
-      <li id="cat"><%= link_to category.name, city_category_path(@city, category) %></li>
+    <ul class="ctg">
+      <li class="cat"><%= link_to category.name, city_category_path(@city, category) %></li>
     </ul>
   <%end%>
 </div>

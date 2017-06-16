@@ -8,6 +8,6 @@ class Branch < ApplicationRecord
   validates :name, :organization, :date, :location, :info, presence: true
 
   def self.most_recent
-    order(created_at: :desc).limit(6)
+    order(created_at: :desc).limit(5)
   end
 end

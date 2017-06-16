@@ -14,3 +14,24 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+// Tease City Categories
+$(() => {
+  $("li.cont_item > a").on({
+    mouseenter: function(e) {
+      $.get(this.href).success(function(json){
+        var $ul = $(".hidden_ctg")
+        $ul.html("")
+        var ctg = (json.categories)
+        ctg.forEach(function(category){
+          $ul.append("<li class='cat'>" + category.name + "</li>");
+        })
+        e.preventDefault();
+      })
+    },
+    mouseleave: function() {
+      var $ul = $(".hidden_ctg")
+      $ul.html("")
+    }
+  })
+});

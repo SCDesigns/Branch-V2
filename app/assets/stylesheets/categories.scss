@@ -1,9 +1,15 @@
 // Place all the styles related to the Categories controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-#ctg, #cat {
+.ctg, .cat {
   display: inline;
   font-size: 20px;
+}
+#hidden_ctg {
+  justify-content: left;
+}
+#hidden_ctg li {
+  padding: 0 5px;
 }
 .sub_container {
   text-align: left;

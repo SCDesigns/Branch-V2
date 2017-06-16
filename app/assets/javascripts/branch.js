@@ -1,7 +1,6 @@
 // Load Comments
 $(() => {
   $("a.load_comments").on("click", function(e){
-    // Fire AJAX
     $.get(this.href).success(function(json){
       var $ol = $("div.comments ol")
       $ol.html("")

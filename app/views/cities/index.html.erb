@@ -1,10 +1,14 @@
 <p class="lead">
   <strong>Welcome to Branch!<br> Please select your city.</strong>
 </p>
-<div class="container city_mod">
+<div class="container" id="city_mod">
   <% @cities.each do |city| %>
-  <ul id="cont">
-    <h3><li id="cont_item"><%= link_to city.name, city_path(city) %></li></h3><br>
+  <ul class="cont">
+    <h3><li class="cont_item"><%= link_to city.name, city_path(city) %></li></h3><br>
+      <div class="hidden_ctg">
+          <ul>
+          </ul>
+      </div>
   </ul>
   <% end %>
   <div class="buttons">

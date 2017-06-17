@@ -5,11 +5,9 @@
   display: inline;
   font-size: 20px;
 }
-#hidden_ctg {
-  justify-content: left;
-}
-#hidden_ctg li {
-  padding: 0 5px;
+.hidden_cat {
+  padding: 0 10px;
+  font-weight: bold;
 }
 .sub_container {
   text-align: left;

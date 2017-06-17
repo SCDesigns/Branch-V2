@@ -17,21 +17,28 @@
 
 // Tease City Categories
 $(() => {
-  $("li.cont_item > a").on({
-    mouseenter: function(e) {
-      $.get(this.href).success(function(json){
-        var $ul = $(".hidden_ctg")
-        $ul.html("")
-        var ctg = (json.categories)
-        ctg.forEach(function(category){
-          $ul.append("<li class='cat'>" + category.name + "</li>");
+  $(".js-cat").on({
+    mouseenter: function() {
+      var id = $(this).data("id");
+      var ul = $("#ul-" + id)
+
+      $.get("/cities/" + id, function(data) {
+        var categories = (data.categories)
+
+        categories.forEach(function(category){
+          ul.append("<li class='cat hidden_cat'>" + category.name + "</li>")
         })
-        e.preventDefault();
       })
     },
     mouseleave: function() {
-      var $ul = $(".hidden_ctg")
-      $ul.html("")
+      var id = $(this).data("id");
+      var ul = $("#ul-" + id)
+
+      $.get("/cities/" + id, function(data) {
+        var categories = (data.categories)
+      })
+
+      ul.html("")
     }
   })
 });

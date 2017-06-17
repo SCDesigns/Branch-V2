@@ -4,9 +4,9 @@
 <div class="container" id="city_mod">
   <% @cities.each do |city| %>
   <ul class="cont">
-    <h3><li class="cont_item"><%= link_to city.name, city_path(city) %></li></h3><br>
-      <div class="hidden_ctg">
-          <ul>
+    <h3><li class="cont_item js-cat" data-id="<%= city.id %>"><%= link_to city.name, city_path(city) %></li></h3><br>
+      <div>
+          <ul class="ctg sub_container" id="ul-<%= city.id %>">
           </ul>
       </div>
   </ul>

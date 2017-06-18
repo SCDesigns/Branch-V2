@@ -7,7 +7,7 @@ Specs:
 - [X] Include at least one has_many relationship in information rendered via JSON and appended to the DOM.
 - [X] Use your Rails API and a form to create a resource and render the response without a page refresh.
 - [X] Translate JSON responses into js model objects.
-- [ ] At least one of the js model objects must have at least one method added by your code to the prototype.
+- [X] At least one of the js model objects must have at least one method added by your code to the prototype.
 
 Confirm
 - [X] You have a large number of small Git commits

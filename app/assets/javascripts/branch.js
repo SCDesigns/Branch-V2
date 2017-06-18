@@ -1,3 +1,4 @@
+
 // Load Comments
 $(() => {
   $("a.load_comments").on("click", function(e){
@@ -14,11 +15,21 @@ $(() => {
 
 // Create Comment
 $(() => {
+  function Comment(data) {
+    this.id = data.id;
+    this.content = data.content;
+  }
+
+  Comment.prototype.postComment = function() {
+    $("#comment_content").val("");
+    var $ol = $("div.comments ol")
+    $ol.append("<li>" + this.content + "</li>");
+  }
+
   $("#new_comment").on("submit", function(e){
     $.post(this.action, $(this).serialize()).success(function(response){
-      $("#comment_content").val("");
-      var $ol = $("div.comments ol")
-      $ol.append("<li>" + response.content + "</li>");
+      var comment = new Comment(response);
+      comment.postComment();
     })
     e.preventDefault();
   })

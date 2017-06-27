@@ -23,7 +23,10 @@ class CitiesController < ApplicationController
 
   def show
     @city = City.find(params[:id])
-    render json: @city, :include => :categories
+    respond_to do |format|
+      format.html
+      format.json { render :json => @city.to_json(:include => :categories) }
+    end
   end
 
   def edit

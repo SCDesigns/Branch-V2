@@ -1,3 +1,5 @@
+source 'https://rubygems.org'
+gem "rake", '~> 12.0.0'
 #bootstrap
 gem 'bootstrap-sass', '~> 3.3.6'
 #authentication / authorization

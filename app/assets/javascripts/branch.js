@@ -27,10 +27,11 @@ $(() => {
   }
 
   $("#new_comment").on("submit", function(e){
+    e.preventDefault();
     $.post(this.action, $(this).serialize()).success(function(response){
       var comment = new Comment(response);
       comment.postComment();
+      $('input:submit').attr('disabled', false)
     })
-    e.preventDefault();
   })
 });

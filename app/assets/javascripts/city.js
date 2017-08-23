@@ -1,5 +1,5 @@
 // Tease City Categories
-$(() => {
+$( function() {
   $(".js-cat").on({
     mouseenter: function() {
       var id = $(this).data("id");

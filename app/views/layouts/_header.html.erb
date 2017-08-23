@@ -1,15 +1,15 @@
 <nav class="navbar navbar-default navbar-fixed-top">
   <ul class="nav navbar-nav navbar-left">
-    <li> <%= link_to "Cities", cities_path %> </li>
   <% if !current_user %>
     <li> <%= link_to "Sign In", new_user_session_path %> </li>
     <li> <%= link_to "Sign Up", new_user_registration_path  %> </li>
   </ul>
   <% else %>
-  <ul class="nav navbar-nav navbar-right">
-    <li id="hello"> <%= "Signed in as: "%><strong><%="#{current_user.name}".capitalize%></strong></li>
-    <li> <%= link_to "Sign Out",  destroy_user_session_path, :method => :delete %></li>
-  </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li> <%= link_to "Cities", cities_path %> </li>
+      <li id="hello"> <%= "Signed in as: "%><strong><%="#{current_user.name}".capitalize%></strong></li>
+      <li> <%= link_to "Sign Out",  destroy_user_session_path, :method => :delete %></li>
+    </ul>
   <% end %>
   </ul>
 </nav>

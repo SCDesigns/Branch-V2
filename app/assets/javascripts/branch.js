@@ -1,6 +1,5 @@
-
 // Load Comments
-$(() => {
+$(function(){
   $("a.load_comments").on("click", function(e){
     $.get(this.href).success(function(json){
       var $ol = $("div.comments ol")
@@ -14,7 +13,7 @@ $(() => {
 });
 
 // Create Comment
-$(() => {
+$(function(){
   function Comment(data) {
     this.id = data.id;
     this.content = data.content;

@@ -3,6 +3,8 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 #city_mod {
   border-radius: 5px !important;
+  margin: auto;
+  font-weight: 700;
 }
 .cont {
   list-style-type: none;
@@ -11,4 +13,5 @@
 }
 .cont_item {
   text-align: center;
+  text-decoration: none;
 }

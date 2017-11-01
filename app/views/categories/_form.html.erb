@@ -8,6 +8,6 @@
       <%= c.text_field :name %><br><br>
     <% end %>
     <%= f.collection_check_boxes :city_ids, City.all, :id, :name %><br>
-    <%= f.submit :class => 'submit' %>
+    <%= f.submit :class => 'btn btn-default' %>
     <% end %>
 </div>

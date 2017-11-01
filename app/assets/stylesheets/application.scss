@@ -17,7 +17,7 @@
 @import "bootstrap";
  /* Some Style from the Bootstrap Default Theme */
 body {
-  background-image: image-url('/assets/background.png'); /* Bird on a Branch : ajmaines (https://interfacelift.com/wallpaper/details/1819/bird_on_a_branch.html); */
+  background-image: linear-gradient(100deg, #00987E, #2A677D); /* Bird on a Branch : ajmaines (https://interfacelift.com/wallpaper/details/1819/bird_on_a_branch.html); */
   min-height: 100%;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -26,6 +26,7 @@ body {
   background-color: #E0E0E0;
   padding-top: 70px;
   text-align: center;
+  font-family: 'Lato', sans-serif;
 }
 .alert {
   margin: 0 auto 20px;
@@ -33,15 +34,37 @@ body {
 }
 .btn {
   margin: 10px;
+  border: none;
+  box-shadow: 0 7px 14px rgba(50,50,93,.1), 0 3px 6px rgba(0,0,0,.08);
+  color: #fff;
+}
+.btn-default {
+  background-color: #2A677D;
+}
+.btn-primary {
+  background-color: #fff;
+  color: #BDBDBD;
 }
 .btn a {
   text-decoration: none;
-  color: #000000;
 }
-.btn-default > a:hover {
+.btn-default:hover,
+.btn-default:focus,
+.btn-default:active,
+.btn-default.active,
+.open>.dropdown-toggle.btn-default {
   background-color: #00e676;
-  color: #FFFFFF;
   font-weight: bold;
+  transform: translateY(-1px);
+}
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active,
+.btn-primary.active,
+.open>.dropdown-toggle.btn-primary {
+  background-color: #ef5350;
+  font-weight: bold;
+  transform: translateY(-1px);
 }
 .buttons {
   margin: 10px auto;
@@ -54,22 +77,19 @@ body {
   padding: 15px 10px;
   max-width: 40vw;
   background-color: #FFFFFF;
-  font-family: "Helvetica Neue", Roboto, "Segoe UI", Calibri, sans-serif;
   font-size: 15px;
   line-height: 25px;
   border-radius: 0px 0px 5px 5px;
-  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 5px 30px rgba(156, 160, 171, 0.50);
 }
 .container a {
   color: #2A677D;
-  text-decoration: underline #D8E435;
 }
 .comments {
   margin: 10px auto;
   padding: 15px 10px;
   max-width: 40vw;
   background-color: #FFFFFF;
-  font-family: "Helvetica Neue", Roboto, "Segoe UI", Calibri, sans-serif;
   font-size: 15px;
   line-height: 25px;
   border-radius: 5px;
@@ -80,7 +100,6 @@ body {
   padding: 15px 10px;
   max-width: 40vw;
   background-color: #FFFFFF;
-  font-family: "Helvetica Neue", Roboto, "Segoe UI", Calibri, sans-serif;
   font-size: 15px;
   line-height: 25px;
   border-radius: 5px;
@@ -94,7 +113,6 @@ body {
   margin: 0 auto;
   padding: 15px 10px;
   max-width: 40vw;
-  font-family: "Helvetica Neue", Roboto, "Segoe UI", Calibri, sans-serif;
   font-size: 15px;
   line-height: 25px;
   box-shadow: 0 2px 3px rgba(0, 0, 0, 0.15);
@@ -107,21 +125,10 @@ body {
   color: #FFFFFF;
 }
 .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
-  color: #2A677D;
+  color: #00987E;
   font-weight: bold;
-  text-decoration: underline #D8E435;
 }
 .submit {
-  background-color: #2A677D;
-  color: #D8E435;
-  border: none;
-  margin: 10px;
-  padding: 6px 12px;
-  white-space: nowrap;
-  font-weight: bold;
-  border-radius: 4px;
-}
-#new_comment > input[type="submit"] {
   background-color: #2A677D;
   color: #D8E435;
   border: none;

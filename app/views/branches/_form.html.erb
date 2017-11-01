@@ -1,6 +1,7 @@
 <div class="container form">
   <%= form_for [@city, @category, @branch] do |f| %>
     <h4>City: <%= @city.name %></h4> <br>
+    <div class="partition"></div>
     <h4>Category: <%= @category.name %></h4> <br>
     <%= f.label :name %><br>
     <%= f.text_field :name %><br>
@@ -20,6 +21,6 @@
     start_year: Date.current.year, default: Time.now, ampm: true %><br>
     <br>
 
-    <%= f.submit :class => 'submit' %>
+    <%= f.submit :class => 'btn btn-default' %>
   <% end %>
 </div>

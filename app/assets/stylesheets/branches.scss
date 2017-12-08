@@ -1,11 +1,12 @@
 // Place all the styles related to the Branches controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-#align_left {
+.branch {
   text-align: left;
   max-width: 35vw;
   font-size: 15px;
   font-weight: bold;
+  list-style: none;
 }
 .feed {
   margin: 0 auto;

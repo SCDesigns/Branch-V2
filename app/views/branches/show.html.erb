@@ -2,21 +2,20 @@
   <h3><b><%= @branch.name %><br></h3>
 </div>
 <div class="container">
-  <ul id="align_left">
-    <li><%= @branch.organization %></li><br>
-    <li><%= @branch.date.strftime("%b %e, %Y - %l:%M %P") %></li><br>
-    <li><%= @branch.location %></li><br>
-    <li><%= @branch.info %></li>
+  <ul class="branch">
+    <li><h4>Who:</h4><%= @branch.organization %></li><br>
+    <li><h4>When:</h4><%= @branch.date.strftime("%b %e, %Y - %l:%M %P") %></li><br>
+    <li><h4>Where:</h4><%= @branch.location %></li><br>
+    <li><h4>Info:</h4><%= @branch.info %></li>
   </ul>
 </div>
 
-<div>
+<!-- <div>
     <%= link_to "Load Comments", branch_comments_path(@branch), :class => "load_comments btn btn-default" %>
-</div>
+</div> -->
 
 <div class="comments">
-  <ol>
-  </ol>
+  <%= render :partial => @comment %>
 </div>
 
 <%= form_for([@branch, @comment]) do |f| %>

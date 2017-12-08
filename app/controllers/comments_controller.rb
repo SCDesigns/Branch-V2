@@ -8,7 +8,15 @@ class CommentsController < ApplicationController
 
   def create
     @comment = @branch.comments.create(comments_params)
-    render :json => @comment
+    respond_to do |f|
+      if @comment.save
+        f.html { redirect_to :back }
+        f.json { render :json => @comment }
+      else
+        f.html { redirect_to :back }
+        f.json { render layout: false }
+      end
+    end
   end
 
 

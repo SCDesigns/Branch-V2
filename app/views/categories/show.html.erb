@@ -4,13 +4,13 @@
 <div class="container">
     <% @branches.each do |branch| %>
       <div class="sub_container">
-        <b><%= link_to branch.name, city_category_branch_path(branch.city, branch.category, branch) %></b><br>
-          <ul>
-            <li><%= branch.organization %></li><br>
-            <li><%= branch.date.strftime("%b %e, %Y - %l:%M %P") %></li><br>
-            <li><%= branch.location %></li><br>
-            <li><%= branch.info %></li>
-          </ul>
+        <h3><b><%= link_to branch.name, city_category_branch_path(branch.city, branch.category, branch) %></b><h3>
+        <ul class="branch">
+          <li><h4>Who:</h4><%= branch.organization %></li><br>
+          <li><h4>When:</h4><%= branch.date.strftime("%b %e, %Y - %l:%M %P") %></li><br>
+          <li><h4>Where:</h4><%= branch.location %></li><br>
+          <li><h4>Info:</h4><%= branch.info %></li>
+        </ul>
       </div>
     <% end %>
 </div>

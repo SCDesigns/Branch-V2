@@ -32,7 +32,7 @@ $(function(){
           var comment = new Comment(response);
           comment.postComment();
           $('input:submit').attr('disabled', false)
-        }, "json")
+        }, "json");
       e.preventDefault();
     })
   })
